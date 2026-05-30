@@ -14,5 +14,56 @@
                 ]
             }
         }
+    },
+    "进游戏-任务开始层": {
+        "next": [
+            "进游戏-已进入首页",
+            "[JumpBack]进游戏-点击进入游戏",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "进游戏-已进入首页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        }
+    },
+    "进游戏-点击进入游戏": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1179,
+                    6,
+                    101,
+                    103
+                ],
+                "template": [
+                    "进入游戏/点击进游戏.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    360,
+                    513,
+                    526,
+                    158
+                ]
+            }
+        }
     }
 }

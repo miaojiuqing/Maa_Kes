@@ -1,0 +1,19 @@
+{
+    "task": [
+        {
+            "name": "进入游戏",
+            "label": "🎮进入游戏",
+            "default_check": true,
+            "group": [
+                "日常"
+            ],
+            "entry": "进游戏-任务开始层",
+            "description": "暂不支持模拟器游戏自启动,若有需要麻烦提供包名",
+            "pipeline_override": {
+                "进游戏-点击进入游戏": {
+                    "enabled": true
+                }
+            }
+        }
+    ]
+}
