@@ -62,10 +62,16 @@
         "tasks/进入游戏.json",
         //日常
         "tasks/日常/喝咖啡.json",
+        "tasks/日常/政策审阅.json",
         //单独运行工具
         "tasks/工具/剧情跳过.json",
         "tasks/工具/自动推图.json",
         "tasks/工具/教学红点清除.json"
     ],
-    "option": {}
+    "option": {
+        "没做完别看了": {
+            "label": "没做完，待完善",
+            "cases": []
+        }
+    }
 }

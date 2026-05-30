@@ -1,0 +1,198 @@
+{
+    "日常-政策-任务开始层": {
+        "next": [
+            "日常-政策-已进入方舟城市",
+            "[JumpBack]进游戏-任务开始层"
+        ]
+    },
+    "日常-政策-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "日常-政策-已进入方舟城市",
+            "[JumpBack]首页点击-方舟城市",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "日常-政策-已进入方舟城市": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    486,
+                    359,
+                    299,
+                    114
+                ],
+                "template": [
+                    "日常/政策审阅/点击进入政策室.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "日常-政策-已进入政策室",
+            "日常-政策-已进入方舟城市"
+        ]
+    },
+    "日常-政策-灾后重建工作策略选择": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    48,
+                    79,
+                    135,
+                    126
+                ],
+                "template": [
+                    "日常/政策审阅/灾后重建/准备选择策略.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "触发灾后重建方案选择"
+        },
+        "next": [
+            "日常-政策-灾后重建方案选择-优先级1",
+            "日常-政策-灾后重建方案选择-优先级2",
+            "日常-政策-灾后重建方案选择-优先级3"
+        ]
+    },
+    "日常-政策-已进入政策室": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    62,
+                    95,
+                    94
+                ],
+                "template": [
+                    "日常/政策审阅/已进入政策室.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    789,
+                    210,
+                    308,
+                    330
+                ]
+            }
+        },
+        "next": [
+            "日常-政策-开始审批",
+            "日常-政策-已进入政策室"
+        ]
+    },
+    "日常-政策-开始审批": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    802,
+                    650,
+                    273,
+                    66
+                ],
+                "template": [
+                    "日常/政策审阅/开始审批.png"
+                ]
+            }
+        },
+        "next": [
+            "日常-政策审阅-审批结束",
+            "[JumpBack]日常-政策-审批奖励确认",
+            "[JumpBack]日常-政策-固定路径盖章"
+        ]
+    },
+    "日常-政策-固定路径盖章": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "pressure": 2,
+                "duration": 800,
+                "begin": [
+                    895,
+                    570,
+                    89,
+                    63
+                ],
+                "end": [
+                    708,
+                    222,
+                    160,
+                    183
+                ]
+            }
+        }
+    },
+    "日常-政策-审批奖励确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    625,
+                    212,
+                    79,
+                    184
+                ],
+                "template": [
+                    "日常/政策审阅/盖章奖励确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    678,
+                    404,
+                    451,
+                    125
+                ]
+            }
+        }
+    },
+    "日常-政策审阅-审批结束": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    892,
+                    259,
+                    208,
+                    159
+                ],
+                "template": [
+                    "日常/政策审阅/批完了.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "批阅完毕~"
+        },
+        "next": [
+            "已进入首页",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数"
+        ]
+    }
+}
