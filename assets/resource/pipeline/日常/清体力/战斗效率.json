@@ -1,0 +1,325 @@
+{
+    "清体力-战斗效率-开始执行层": {
+        "max_hit": 1,
+        "next": [
+            "清体力-战斗效率-挑战次数重置"
+        ]
+    },
+    "清体力-当前体力不足完成所选效率": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    862,
+                    620,
+                    404,
+                    76
+                ],
+                "upper": [
+                    150,
+                    151,
+                    152
+                ],
+                "lower": [
+                    89,
+                    89,
+                    89
+                ],
+                "count": 10000
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前体力不足以完成所选效率"
+        },
+        "next": [
+            "清体力-当前体力能够完成所选效率",
+            "清体力-体力小于20已耗尽",
+            "[JumpBack]清体力-当前体力不足完成所选效率-点击动作"
+        ]
+    },
+    "清体力-当前体力不足完成所选效率-点击动作": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    862,
+                    620,
+                    404,
+                    76
+                ],
+                "upper": [
+                    150,
+                    151,
+                    152
+                ],
+                "lower": [
+                    89,
+                    89,
+                    89
+                ],
+                "count": 10000
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    875,
+                    585,
+                    31,
+                    30
+                ]
+            }
+        },
+        "post_delay": 800
+    },
+    "清体力-当前体力能够完成所选效率": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    862,
+                    620,
+                    404,
+                    76
+                ],
+                "upper": [
+                    122,
+                    82,
+                    124
+                ],
+                "lower": [
+                    57,
+                    54,
+                    66
+                ],
+                "count": 10000
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前战斗效率足以花完所有体力"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    875,
+                    585,
+                    31,
+                    30
+                ]
+            }
+        },
+        "post_delay": 800
+    },
+    "清体力-体力小于20已耗尽": { //都这个位置了还不够"清体力-当前体力能够完成所选效率"那不就是体力不足嘛
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1214,
+                    573,
+                    52,
+                    51
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/增加次数.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前所持有体力已耗尽"
+        },
+        "next": [
+            "已进入首页-结束任务",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "清体力-战斗效率-挑战次数重置": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    926,
+                    575,
+                    271,
+                    51
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "end": [
+                    873,
+                    581,
+                    35,
+                    37
+                ],
+                "duration": 500,
+                "end_hold": 200
+            }
+        },
+        "next": [
+            "清体力-战斗效率-单次刷取次数-重置成功",
+            "清体力-战斗效率-挑战次数重置"
+        ]
+    },
+    "清体力-战斗效率-单次刷取次数-重置成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    934,
+                    581,
+                    41,
+                    40
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        },
+        "next": [
+            "清体力-当前体力不足",
+            "清体力-战斗效率-单次刷取次数已选择_4次",
+            "[JumpBack]清体力-战斗效率-挑战次数+1"
+        ]
+    },
+    "清体力-当前体力不足": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    862,
+                    620,
+                    404,
+                    76
+                ],
+                "upper": [
+                    150,
+                    151,
+                    152
+                ],
+                "lower": [
+                    89,
+                    89,
+                    89
+                ],
+                "count": 10000
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前所持有体力已耗尽"
+        },
+        "next": [
+            "已进入首页-结束任务",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "清体力-战斗效率-挑战次数+1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1214,
+                    573,
+                    52,
+                    51
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/增加次数.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500
+    },
+    "清体力-战斗效率-单次刷取次数已选择_1次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    934,
+                    581,
+                    41,
+                    40
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        }
+    },
+    "清体力-战斗效率-单次刷取次数已选择_2次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    993,
+                    579,
+                    34,
+                    42
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        }
+    },
+    "清体力-战斗效率-单次刷取次数已选择_3次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1048,
+                    578,
+                    35,
+                    43
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        }
+    },
+    "清体力-战斗效率-单次刷取次数已选择_4次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1104,
+                    578,
+                    33,
+                    43
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        }
+    },
+    "清体力-战斗效率-单次刷取次数已选择_5次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1159,
+                    578,
+                    33,
+                    45
+                ],
+                "template": [
+                    "日常/清体力/战斗效率/次数选择.png"
+                ]
+            }
+        }
+    }
+}

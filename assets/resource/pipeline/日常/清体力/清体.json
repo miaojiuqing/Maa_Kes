@@ -1,0 +1,100 @@
+{
+    "清体力-任务开始层": {
+        "next": [
+            "清体力-已进入超时空流域",
+            "清体力-已进入模拟",
+            "[JumpBack]进游戏-任务开始层"
+        ]
+    },
+    "清体力-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "清体力-已进入超时空流域",
+            "清体力-已进入模拟",
+            "[JumpBack]首页点击-模拟",
+            "[JumpBack]卡厄斯logo加载"
+        ]
+    },
+    "清体力-已进入模拟": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    267,
+                    352,
+                    134,
+                    138
+                ],
+                "template": [
+                    "日常/清体力/点击进入战斗训练.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "清体力-已进入超时空流域",
+            "清体力-已进入模拟"
+        ]
+    },
+    "清体力-已进入超时空流域": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    780,
+                    76,
+                    84,
+                    104
+                ],
+                "template": [
+                    "日常/清体力/已进入超时空流域.png"
+                ]
+            }
+        },
+        "next": [
+            "清体力-刷取类型接口"
+        ]
+    },
+    "清体力-刷取类型接口": {
+        "focus": {
+            "Node.Recognition.Succeeded": "将根据选项分类"
+        },
+        "next": []
+    },
+    "清体力-战斗结束-结束": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    780,
+                    76,
+                    84,
+                    104
+                ],
+                "template": [
+                    "日常/清体力/已进入超时空流域.png"
+                ]
+            }
+        },
+        "next": [
+            "清体力-成长-已进入编队界面",
+            "[JumpBack]日常-清体力-再战体力检查-足以再战",
+            "[JumpBack]日常-清体力-再战体力检查-不足再战",
+            "清体力-成长-战斗结束"
+        ]
+    }
+}

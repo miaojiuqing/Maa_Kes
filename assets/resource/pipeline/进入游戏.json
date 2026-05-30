@@ -15,6 +15,23 @@
             }
         }
     },
+    "已进入首页-结束任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "action": "StopTask"
+    },
     "进游戏-任务开始层": {
         "next": [
             "进游戏-已进入首页",
