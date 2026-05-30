@@ -14,7 +14,6 @@ except ModuleNotFoundError as e:
 
 from configure import configure_ocr_model
 
-
 working_dir = Path(__file__).parent.parent.resolve()
 install_path = working_dir / Path("install")
 version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
@@ -98,7 +97,6 @@ def install_deps():
         )
 
 
-
 def install_resource():
 
     configure_ocr_model()
@@ -111,6 +109,13 @@ def install_resource():
     shutil.copy2(
         working_dir / "assets" / "interface.json",
         install_path,
+    )
+
+    # 新增：复制 tasks 文件夹
+    shutil.copytree(
+        working_dir / "assets" / "tasks",
+        install_path / "tasks",
+        dirs_exist_ok=True,
     )
 
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
