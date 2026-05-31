@@ -6,7 +6,7 @@
             "[JumpBack]进游戏-任务开始层"
         ]
     },
-    "日常-政策-总任务层": {
+    "日常-政策-总任务层": { //诺诺对话
         "recognition": {
             "type": "TemplateMatch",
             "param": {
