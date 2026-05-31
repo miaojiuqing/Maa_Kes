@@ -1,0 +1,64 @@
+{
+    "task": [
+        {
+            "name": "日常-领奖",
+            "label": "🎁领奖",
+            "default_check": true,
+            "group": [
+                "日常"
+            ],
+            "entry": "领奖-任务开始层",
+            "description": "来点试验想法",
+            "option": [
+                "领奖-日常活跃奖励",
+                "领奖-阿基亚农补给"
+            ]
+        }
+    ],
+    "option": {
+        "领奖-日常活跃奖励": {
+            "label": "日常活跃奖励",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "领奖-日常活跃-任务开始层": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "领奖-日常活跃-任务开始层": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "领奖-阿基亚农补给": {
+            "label": "阿基亚农补给",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "领奖-补给-任务开始层": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "领奖-补给-任务开始层": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
