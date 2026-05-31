@@ -254,6 +254,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-前锋",
                     "label": "前锋",
+                    "icon": "./resource/image/图标/职业分支/前锋.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -265,6 +266,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-守卫",
                     "label": "守卫",
+                    "icon": "./resource/image/图标/职业分支/守卫.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -276,6 +278,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-游侠",
                     "label": "游侠",
+                    "icon": "./resource/image/图标/职业分支/游侠.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -287,6 +290,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-猎人",
                     "label": "猎人",
+                    "icon": "./resource/image/图标/职业分支/猎人.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -299,6 +303,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-奥术师",
                     "label": "奥术师",
+                    "icon": "./resource/image/图标/职业分支/奥术师.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -313,6 +318,7 @@
                 {
                     "name": "日常-清体力-主战员刷取选择-操控师",
                     "label": "操控师",
+                    "icon": "./resource/image/图标/职业分支/操控师.png",
                     "pipeline_override": {
                         "清体力-主战员-刷取选择接口": {
                             "template": [
@@ -334,6 +340,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-前锋",
                     "label": "前锋",
+                    "icon": "./resource/image/图标/职业分支/前锋.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -345,6 +352,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-守卫",
                     "label": "守卫",
+                    "icon": "./resource/image/图标/职业分支/游侠.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -356,6 +364,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-游侠",
                     "label": "游侠",
+                    "icon": "./resource/image/图标/职业分支/游侠.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -367,6 +376,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-猎人",
                     "label": "猎人",
+                    "icon": "./resource/image/图标/职业分支/猎人.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -379,6 +389,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-奥术师",
                     "label": "奥术师",
+                    "icon": "./resource/image/图标/职业分支/奥术师.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -393,6 +404,7 @@
                 {
                     "name": "日常-清体力-辅战员刷取选择-操控师",
                     "label": "操控师",
+                    "icon": "./resource/image/图标/职业分支/操控师.png",
                     "pipeline_override": {
                         "清体力-辅战员-刷取选择接口": {
                             "template": [
@@ -414,6 +426,7 @@
                 {
                     "name": "日常-清体力-潜能刷取选择-热情",
                     "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
                     "pipeline_override": {
                         "清体力-潜能-刷取选择接口": {
                             "template": [
@@ -425,6 +438,7 @@
                 {
                     "name": "日常-清体力-潜能刷取选择-秩序",
                     "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
                     "pipeline_override": {
                         "清体力-潜能-刷取选择接口": {
                             "template": [
@@ -436,6 +450,7 @@
                 {
                     "name": "日常-清体力-潜能刷取选择-本能",
                     "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
                     "pipeline_override": {
                         "清体力-潜能-刷取选择接口": {
                             "template": [
@@ -447,6 +462,7 @@
                 {
                     "name": "日常-清体力-潜能刷取选择-虚无",
                     "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
                     "pipeline_override": {
                         "清体力-潜能-刷取选择接口": {
                             "template": [
@@ -459,6 +475,7 @@
                 {
                     "name": "日常-清体力-潜能刷取选择-正义",
                     "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
                     "pipeline_override": {
                         "清体力-潜能-刷取选择接口": {
                             "template": [
