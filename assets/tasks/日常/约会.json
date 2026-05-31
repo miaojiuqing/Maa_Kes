@@ -1,0 +1,71 @@
+{
+    "task": [
+        {
+            "name": "日常-约会",
+            "label": "❤️共度时光",
+            "default_check": true,
+            "group": [
+                "日常"
+            ],
+            "entry": "日常-约会-任务开始层",
+            "description": "自选任务思索中",
+            "option": [
+                "日常-约会-首次进入区域选择"
+                // "日常-约会-约会候选"
+            ]
+        }
+    ],
+    "option": {
+        "日常-约会-首次进入区域选择": {
+            "label": "区域选择",
+            "description": "仅影响进入船内时首次点击进入的区域",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "中央街区",
+                    "icon": "./resource/image/日常/共度时光/地区选择/中央街区.png",
+                    "pipeline_override": {
+                        "日常-约会-点击进入所选地区": {
+                            "template": [
+                                "日常/共度时光/地区选择/中央街区.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "学院",
+                    "icon": "./resource/image/日常/共度时光/地区选择/学院.png",
+                    "pipeline_override": {
+                        "日常-约会-点击进入所选地区": {
+                            "template": [
+                                "日常/共度时光/地区选择/学院.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "度假区",
+                    "icon": "./resource/image/日常/共度时光/地区选择/度假区.png",
+                    "pipeline_override": {
+                        "日常-约会-点击进入所选地区": {
+                            "template": [
+                                "日常/共度时光/地区选择/度假区.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "行政区",
+                    "icon": "./resource/image/日常/共度时光/地区选择/行政区.png",
+                    "pipeline_override": {
+                        "日常-约会-点击进入所选地区": {
+                            "template": [
+                                "日常/共度时光/地区选择/行政区.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

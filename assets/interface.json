@@ -63,6 +63,7 @@
         //日常
         "tasks/日常/喝咖啡.json",
         "tasks/日常/政策审阅.json",
+        "tasks/日常/约会.json",
         "tasks/日常/模拟处清体力.json",
         "tasks/日常/奖励领取.json",
         //单独运行工具

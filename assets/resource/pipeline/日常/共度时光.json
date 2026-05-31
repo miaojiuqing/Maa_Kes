@@ -1,0 +1,456 @@
+{
+    "日常-约会-任务开始层": {},
+    "日常-约会-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-点击进入所选地区",
+            "[JumpBack]首页点击-方舟城市",
+            "[JumpBack]卡厄思logo加载"
+        ]
+    },
+    "日常-约会-点击进入所选地区": {
+        //分流
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    109,
+                    115,
+                    1111,
+                    298
+                ],
+                "template": [
+                    "日常/共度时光/地区选择/中央街区.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    50,
+                    5,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-已进入城内",
+            "日常-约会-点击进入所选地区"
+        ]
+    },
+    "日常-约会-已进入城内": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-点击所选人头",
+            "[JumpBack]日常-约会-点击切换地区"
+        ]
+    },
+    "日常-约会-点击所选人头": {
+        //分流
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    96,
+                    27,
+                    1083,
+                    591
+                ],
+                "threshold": [
+                    0.85
+                ],
+                "green_mask": true,
+                "template": [
+                    "日常/共度时光/角色小头/随便.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    30,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-已进入约会界面",
+            "日常-约会-点击所选人头"
+        ]
+    },
+    "日常-约会-点击切换地区": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1500
+    },
+    "日常-约会-已进入约会界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    667,
+                    505,
+                    120,
+                    109
+                ],
+                "template": [
+                    "日常/共度时光/准备共度时光.png"
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-可共度时光",
+            "日常-约会-不可共度时光"
+        ]
+    },
+    "日常-约会-可共度时光": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    865,
+                    596,
+                    400,
+                    91
+                ],
+                "upper": [
+                    241,
+                    134,
+                    64
+                ],
+                "lower": [
+                    239,
+                    120,
+                    41
+                ],
+                "count": 12000
+            }
+        },
+        "action": "Click",
+        "post_delay": 1200,
+        "next": [
+            "日常-约会-可共度时光-外出确认",
+            "日常-约会-可共度时光",
+            "日常-约会-已进入城内"
+        ]
+    },
+    "日常-约会-可共度时光-外出确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    505,
+                    249,
+                    261,
+                    148
+                ],
+                "template": [
+                    "日常/共度时光/共度时光确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    657,
+                    435,
+                    366,
+                    41
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-可共度时光-已进入对话",
+            "日常-约会-已进入约会界面",
+            "日常-约会-可共度时光"
+        ]
+    },
+    "日常-约会-可共度时光-已进入对话": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1186,
+                    72,
+                    84,
+                    87
+                ],
+                "template": [
+                    "日常/共度时光/畅聊中.png"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]日常-约会-跳过确认",
+            "[JumpBack]日常-约会-可共度时光-跳过当前对话",
+            "日常-约会-可共度时光-回答"
+        ]
+    },
+    "日常-约会-可共度时光-跳过当前对话": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    969,
+                    0,
+                    108,
+                    96
+                ],
+                "template": [
+                    "通用/交互按钮/剧情跳过.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 350
+    },
+    "日常-约会-跳过确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    558,
+                    259,
+                    187,
+                    74
+                ],
+                "template": [
+                    "单线程工具/剧情跳过/跳过确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    662,
+                    435,
+                    357,
+                    41
+                ]
+            }
+        }
+    },
+    "日常-约会-可共度时光-回答": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    224,
+                    180,
+                    912,
+                    236
+                ],
+                "upper": [
+                    15,
+                    16,
+                    14
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "connected": true,
+                "count": 20000
+            }
+        },
+        "action": "Click",
+        "next": [
+            "日常-约会-默契度提升了",
+            "日常-约会-可共度时光-回答",
+            "[JumpBack]日常-约会-跳过确认",
+            "[JumpBack]日常-约会-可共度时光-跳过当前对话",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    },
+    "日常-约会-默契度提升了": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    288,
+                    572,
+                    776,
+                    79
+                ],
+                "template": [
+                    "日常/共度时光/默契度++.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "默契度提升了❤️"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    509,
+                    649,
+                    261,
+                    52
+                ]
+            }
+        },
+        "next": [
+            "日常-约会-不可共度时光-旅行卷不足",
+            "日常-约会-不可共度时光",
+            "日常-约会-默契度提升了",
+            "[JumpBack]通用-点击屏幕",
+            "[JumpBack]日常-约会-误触进入外出图鉴"
+        ]
+    },
+    "日常-约会-误触进入外出图鉴": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    633,
+                    67,
+                    100,
+                    123
+                ],
+                "template": [
+                    "日常/共度时光/外出图鉴.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1191,
+                    54,
+                    37,
+                    35
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "日常-约会-不可共度时光": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    865,
+                    596,
+                    400,
+                    91
+                ],
+                "upper": [
+                    179,
+                    179,
+                    179
+                ],
+                "lower": [
+                    170,
+                    170,
+                    170
+                ],
+                "count": 12000
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    22,
+                    14,
+                    67,
+                    40
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-不可共度时光-旅行卷不足",
+            "日常-约会-已进入城内",
+            "日常-约会-不可共度时光"
+        ]
+    },
+    "日常-约会-不可共度时光-旅行卷不足": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1152,
+                    602,
+                    67,
+                    75
+                ],
+                "template": [
+                    "日常/共度时光/没旅行卷了.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "今日旅行卷消耗殆尽"
+        },
+        "next": [
+            "已进入首页",
+            "[JumpBack]通用-回首页",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数"
+        ]
+    }
+}

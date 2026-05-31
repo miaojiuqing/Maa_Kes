@@ -16,7 +16,7 @@
         "count": 80000,
         "post_delay": 1000
     },
-    "卡厄斯logo加载": {
+    "卡厄思logo加载": {
         "recognition": "ColorMatch",
         "upper": [
             255,
