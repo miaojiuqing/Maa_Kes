@@ -28,7 +28,7 @@
     ],
     "resource": [
         {
-            "name": "国服",
+            "name": "简中",
             "path": [
                 "./resource"
             ]
