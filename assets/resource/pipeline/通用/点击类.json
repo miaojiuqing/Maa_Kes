@@ -70,5 +70,32 @@
             }
         },
         "action": "Click"
+    },
+    "通用-诺诺对话": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1158,
+                    594,
+                    78,
+                    74
+                ],
+                "template": [
+                    "通用/交互按钮/进城诺诺对话.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    573,
+                    4,
+                    152,
+                    154
+                ]
+            }
+        }
     }
 }
