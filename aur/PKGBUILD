@@ -1,0 +1,80 @@
+# Maintainer: aklnaaw https://github.com/aklnaaw
+# Contributor: miaojiuqing (Maa_KES upstream) https://github.com/miaojiuqing
+#
+# 发布时由 CI 自动生成：aur/PKGBUILD → @VERSION@/@SHA256SUM_LINUX@ 被替换
+# 参见 .github/workflows/install.yml 中的 Generate AUR tarball 步骤
+
+pkgname=maa-kes
+pkgver=@VERSION@
+pkgrel=1
+pkgdesc="卡厄思梦境自动化助手 - MaaFramework 图像识别挂机工具"
+arch=('x86_64')
+url="https://github.com/miaojiuqing/Maa_KES"
+license=('MIT')
+depends=(
+    'dotnet-runtime>=10.0'
+    'python'
+    'glibc'
+    'gcc-libs'
+    'libx11'
+    'libxcb'
+    'libxrandr'
+    'libxrender'
+    'libxinerama'
+    'libxi'
+    'libxcursor'
+    'libgl'
+)
+optdepends=(
+    'android-tools: ADB 连接安卓模拟器/真机'
+    'dotnet-sdk>=10.0: 编译调试 Python agent'
+)
+makedepends=('unzip' 'jq')
+source=(
+    "MaaKes-linux-x86_64-v${pkgver}.zip::https://github.com/miaojiuqing/Maa_KES/releases/download/v${pkgver}/MaaKes-linux-x86_64-v${pkgver}.zip"
+    "maa-kes.desktop"
+    "maa-kes.sh"
+)
+sha256sums=(
+    '@SHA256SUM_LINUX@'
+    '4391a3483a6677418db001f19e6ac68dddea6f7ae061ccf9f8e999bbbc7b02be'
+    '8ac724ebbdf22ec5a252f3786cef221ff3263c65c3fe66894b9be801fb56e2c3'
+)
+install='maa-kes.install'
+
+package() {
+    cd "${srcdir}"
+
+    install -d "${pkgdir}/usr/lib/maa-kes"
+    cp -r MaaAgentBinary "${pkgdir}/usr/lib/maa-kes/"
+    cp -r agent             "${pkgdir}/usr/lib/maa-kes/"
+    cp -r libs              "${pkgdir}/usr/lib/maa-kes/"
+    cp -r plugins           "${pkgdir}/usr/lib/maa-kes/"
+    cp -r resource          "${pkgdir}/usr/lib/maa-kes/"
+    cp -r runtimes          "${pkgdir}/usr/lib/maa-kes/"
+    cp -r tasks             "${pkgdir}/usr/lib/maa-kes/"
+
+    install -Dm644 interface.json   "${pkgdir}/usr/lib/maa-kes/interface.json"
+
+    jq '.controller += [{
+        "name": "桌面端 (Linux)",
+        "type": "WlRoots",
+        "wl_roots": {
+            "window_regex": "卡厄思梦境",
+            "screencap": "Xcb",
+            "mouse": "Seat",
+            "keyboard": "Seat"
+        }
+    }]' "${pkgdir}/usr/lib/maa-kes/interface.json" > "${pkgdir}/usr/lib/maa-kes/interface.json.tmp" \
+        && mv "${pkgdir}/usr/lib/maa-kes/interface.json.tmp" "${pkgdir}/usr/lib/maa-kes/interface.json"
+    install -Dm644 README.md        "${pkgdir}/usr/lib/maa-kes/README.md"
+    install -Dm644 LICENSE          "${pkgdir}/usr/lib/maa-kes/LICENSE"
+    install -Dm644 MFAAvalonia.dll  "${pkgdir}/usr/lib/maa-kes/MFAAvalonia.dll"
+    install -Dm755 MFAAvalonia      "${pkgdir}/usr/lib/maa-kes/MFAAvalonia"
+    install -Dm644 MFAAvalonia.deps.json       "${pkgdir}/usr/lib/maa-kes/MFAAvalonia.deps.json"
+    install -Dm644 MFAAvalonia.runtimeconfig.json "${pkgdir}/usr/lib/maa-kes/MFAAvalonia.runtimeconfig.json"
+    install -Dm644 libloader.dll    "${pkgdir}/usr/lib/maa-kes/libloader.dll"
+
+    install -Dm755 "${srcdir}/maa-kes.sh" "${pkgdir}/usr/bin/maa-kes"
+    install -Dm644 "${srcdir}/maa-kes.desktop" "${pkgdir}/usr/share/applications/maa-kes.desktop"
+}

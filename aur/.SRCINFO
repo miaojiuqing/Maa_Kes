@@ -1,0 +1,33 @@
+# 发布时由 CI 自动生成，参见 .github/workflows/install.yml
+pkgbase = maa-kes
+	pkgdesc = 卡厄思梦境自动化助手 - MaaFramework 图像识别挂机工具
+	pkgver = @VERSION@
+	pkgrel = 1
+	url = https://github.com/miaojiuqing/Maa_KES
+	install = maa-kes.install
+	arch = x86_64
+	license = MIT
+	makedepends = unzip
+	makedepends = jq
+	depends = dotnet-runtime>=10.0
+	depends = python
+	depends = glibc
+	depends = gcc-libs
+	depends = libx11
+	depends = libxcb
+	depends = libxrandr
+	depends = libxrender
+	depends = libxinerama
+	depends = libxi
+	depends = libxcursor
+	depends = libgl
+	optdepends = android-tools: ADB 连接安卓模拟器/真机
+	optdepends = dotnet-sdk>=10.0: 编译调试 Python agent
+	source = MaaKes-linux-x86_64-@VERSION@.zip::https://github.com/miaojiuqing/Maa_KES/releases/download/v@VERSION@/MaaKes-linux-x86_64-v@VERSION@.zip
+	source = maa-kes.desktop
+	source = maa-kes.sh
+	sha256sums = @SHA256SUM_LINUX@
+	sha256sums = 4391a3483a6677418db001f19e6ac68dddea6f7ae061ccf9f8e999bbbc7b02be
+	sha256sums = 8ac724ebbdf22ec5a252f3786cef221ff3263c65c3fe66894b9be801fb56e2c3
+
+pkgname = maa-kes

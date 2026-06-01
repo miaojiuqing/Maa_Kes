@@ -174,6 +174,10 @@ jobs:
     needs: [meta, install, changelog]
     runs-on: ubuntu-latest
     steps:
+      # 取出 aur/ 模板用于生成 AUR 包
+      - uses: actions/checkout@v4
+      # 取出 aur/ 模板用于生成 AUR 包如上
+
       - uses: actions/download-artifact@v4
         with:
           path: assets
@@ -183,7 +187,31 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-          
+
+      # 生成 AUR 包，跟随 Release 发布，Arch Linux 用户可直接 makepkg -si
+      - name: Generate AUR tarball
+        shell: bash
+        run: |
+          TAG="${{ needs.meta.outputs.tag }}"
+          VERSION="${TAG#v}"
+
+          # 校验 Linux x86_64 二进制，sha256 写入 PKGBUILD
+          SHA256=$(sha256sum "assets/MaaKes-linux-x86_64-${TAG}.zip" | cut -d' ' -f1)
+
+          mkdir -p aur-pkg/maa-kes
+
+          # 复制 maa-kes.sh、maa-kes.desktop 等静态文件
+          cp aur/maa-kes.sh        aur-pkg/maa-kes/
+          cp aur/maa-kes.desktop    aur-pkg/maa-kes/
+          # 模板替换 @VERSION@ 和 @SHA256SUM_LINUX@
+          sed "s/@VERSION@/$VERSION/g" aur/maa-kes.install > aur-pkg/maa-kes/maa-kes.install
+          sed "s/@VERSION@/$VERSION/g; s/@SHA256SUM_LINUX@/$SHA256/g" aur/PKGBUILD > aur-pkg/maa-kes/PKGBUILD
+          sed "s/@VERSION@/$VERSION/g; s/@SHA256SUM_LINUX@/$SHA256/g" aur/.SRCINFO > aur-pkg/maa-kes/.SRCINFO
+
+          cd aur-pkg
+          tar czf "../assets/maa-kes-aur.tar.gz" maa-kes/
+      # 生成 AUR 包，跟随 Release 发布，Arch Linux 用户可直接 makepkg -si如上
+
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*

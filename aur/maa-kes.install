@@ -1,0 +1,30 @@
+# 发布时由 CI 替换 @VERSION@，参见 .github/workflows/install.yml
+post_install() {
+    echo "================================================"
+    echo "  Maa_KES v@VERSION@ 已安装"
+    echo ""
+    echo "  启动: maa-kes"
+    echo "  首次启动会在 ~/.local/share/maa-kes/ 创建运行时目录"
+    echo ""
+    echo "  需安装 dotnet-runtime >= 10.0"
+    echo "  Linux 桌面端使用 WlRoots 控制器"
+    echo "  ADB 需连接安卓模拟器/真机"
+    echo "  游戏分辨率 16:9"
+    echo ""
+    echo "  作者: miaojiuqing (淼九清)"
+    echo "  https://github.com/miaojiuqing/Maa_KES"
+    echo "  框架: MaaFramework"
+    echo "================================================"
+}
+
+post_upgrade() {
+    post_install
+}
+
+pre_remove() {
+    true
+}
+
+post_remove() {
+    true
+}

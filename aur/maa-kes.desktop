@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Maa_KES
+Name[zh]=卡厄思梦境助手
+Comment=卡厄思梦境自动化助手 - miaojiuqing / MaaFramework
+Comment[en]=Chtholly's Dream automation assistant - miaojiuqing / MaaFramework
+Exec=maa-kes
+Icon=/usr/lib/maa-kes/resource/image/logo.png
+Terminal=false
+Type=Application
+Categories=Game;Utility;
+Keywords=maa;automation;game;
+StartupNotify=true
