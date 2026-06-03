@@ -1,0 +1,487 @@
+{
+    "出击-战中-已进入战斗界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    1187,
+                    479,
+                    93,
+                    103
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/已进入战斗.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-只需等待",
+            "出击-战中-拖动卡牌给于敌人-强化类",
+            "出击-战中-拖动卡牌给于敌人-技能类",
+            "出击-战中-拖动卡牌给于敌人-状态异常类",
+            "出击-战中-拖动卡牌给于敌人-攻击类",
+            "出击-战中-无可使用卡牌"
+        ]
+    },
+    "出击-战中-只需等待": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1132,
+                    554,
+                    148,
+                    166
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/等待下次战斗中.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-只需等待",
+            "出击-战斗结束",
+            "出击-战中-已进入战斗界面"
+        ]
+    },
+    "出击-战中-无可使用卡牌": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    599,
+                    626,
+                    82,
+                    93
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/0费了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1107,
+                    596,
+                    64,
+                    59
+                ]
+            }
+        },
+        "next": [
+            "出击-战斗结束",
+            "出击-战中-已进入战斗界面",
+            "出击-战中-卡牌闪光"
+        ]
+    },
+    "出击-战中-卡牌闪光": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    5,
+                    0,
+                    102,
+                    105
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战中事件/选择闪光.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "准备闪一卡"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    394,
+                    140,
+                    129,
+                    190
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-确认闪卡",
+            "[JumpBack]出击-战中-点击闪卡"
+        ]
+    },
+    "出击-战中-点击闪卡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1028,
+                    624,
+                    85,
+                    95
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战中事件/未选中闪卡.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1069,
+                    658,
+                    175,
+                    28
+                ]
+            }
+        }
+    },
+    "出击-战中-确认闪卡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1028,
+                    624,
+                    85,
+                    95
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战中事件/已选中闪卡.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1069,
+                    658,
+                    175,
+                    28
+                ]
+            }
+        },
+        "next": [
+            "出击-道中-已进入路程选择界面",
+            "[JumpBack]出击-道中-卡牌闪光-神闪选中",
+            "出击-战中-确认闪卡",
+            "[JumpBack]通用-点击屏幕",
+            "[JumpBack]出击-通用-继续"
+        ]
+    },
+    "出击-战中-拖动卡牌给于敌人-强化类": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/强化类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": [
+                    612,
+                    182,
+                    592,
+                    316
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-已进入战斗界面"
+        ]
+    },
+    "出击-战中-拖动卡牌给于敌人-攻击类": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/攻击类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": [
+                    612,
+                    182,
+                    592,
+                    316
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-已进入战斗界面"
+        ]
+    },
+    "出击-战中-拖动卡牌给于敌人-状态异常类": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/状态异常类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": [
+                    612,
+                    182,
+                    592,
+                    316
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-已进入战斗界面"
+        ]
+    },
+    "出击-战中-拖动卡牌给于敌人-技能类": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/技能类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": [
+                    612,
+                    182,
+                    592,
+                    316
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-已进入战斗界面"
+        ]
+    },
+    "出击-战斗结束": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    294,
+                    82,
+                    84
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结束.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-战后-所有物品领取完毕",
+            "出击-战后-信用点可获取",
+            "出击-战后-获得卡牌",
+            "出击-战后-获得命运",
+            "出击-战后-获得装备",
+            "[JumpBack]通用-点击屏幕",
+            "出击-战斗结算"
+        ]
+    },
+    "出击-战斗结算": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1159,
+                    618,
+                    111,
+                    84
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结算/战斗结算.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "过喽~"
+        },
+        "action": "Click",
+        "next": [
+            "出击-战斗结算-理智消耗",
+            "[JumpBack]出击-通用-继续"
+        ]
+    },
+    "出击-战斗结算-理智消耗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    999,
+                    236,
+                    86,
+                    86
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结算/理智消耗.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1029,
+                    261,
+                    222,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "出击-战斗结算-理智消耗确认",
+            "出击-战斗结算-理智消耗"
+        ]
+    },
+    "出击-战斗结算-理智消耗确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    553,
+                    80,
+                    174,
+                    166
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结算/确认兑换.png"
+                ]
+            }
+        },
+        //应该有个剩余理智检查
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    685,
+                    492,
+                    325,
+                    35
+                ]
+            }
+        },
+        "next": [
+            "出击-战斗结算-理智消耗确认",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    },
+    "出击-战斗结算-已回到结算界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    654,
+                    619,
+                    84,
+                    85
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结算/临时返回.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "已进入首页",
+            "[JumpBack]出击-战斗结算-返回确认",
+            "出击-战斗结算-已回到结算界面",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]通用-点击叉叉"
+        ]
+    },
+    "出击-战斗结算-返回确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    635,
+                    407,
+                    104,
+                    96
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/战斗/战斗结算/返回确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    694,
+                    437,
+                    309,
+                    34
+                ]
+            }
+        }
+    }
+}

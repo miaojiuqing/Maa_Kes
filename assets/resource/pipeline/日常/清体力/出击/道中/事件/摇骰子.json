@@ -1,0 +1,110 @@
+{
+    "出击-道中-事件-可以摇骰子": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    112,
+                    447,
+                    1083,
+                    130
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/骰子/骰子.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "你相信赌狗吗🎲"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    40,
+                    40,
+                    230,
+                    80
+                ]
+            }
+        },
+        "next": [
+            "出击-道中-事件-已进入骰子界面",
+            "[JumpBack]出击-道中-事件-点击进入摇骰子"
+        ]
+    },
+    "出击-道中-事件-点击进入摇骰子": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    112,
+                    447,
+                    1083,
+                    130
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/骰子/骰子.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    40,
+                    40,
+                    230,
+                    80
+                ]
+            }
+        }
+    },
+    "出击-道中-事件-已进入骰子界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    556,
+                    244,
+                    165,
+                    161
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/骰子/已进入骰子界面.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "出击-道中-事件-骰子-成功",
+            "出击-道中-事件-已进入骰子界面"
+        ]
+    },
+    "出击-道中-事件-骰子-成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    564,
+                    443,
+                    147,
+                    90
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/骰子/赢了.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "赌徒大胜利！"
+        },
+        "next": [
+            "出击-道中-已进入路程选择界面",
+            "[JumpBack]出击-通用-跳过",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "出击-道中-卡牌闪光-神闪选中": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    167,
+                    184,
+                    796,
+                    144
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/闪光/神之闪光/尼希勒姆.png",
+                    "日常/出击/选角色/道中/闪光/神之闪光/维托尔.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "神之闪光！"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    100,
+                    160,
+                    0,
+                    0
+                ]
+            }
+        }
+    }
+}

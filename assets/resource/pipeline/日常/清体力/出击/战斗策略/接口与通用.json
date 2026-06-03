@@ -1,0 +1,126 @@
+{
+    "出击-战斗策略-接口层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    114,
+                    108,
+                    106
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/星之流浪者/共享休暇处.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前选则的战斗策略为:\"进去就退\""
+        },
+        "next": [
+            "出击-策略-进了就退-已进入星之流浪者界面",
+            "[JumpBack]出击-威胁确认",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "出击-威胁确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1000,
+                    615,
+                    90,
+                    91
+                ],
+                "template": [
+                    "日常/出击/选角色/威胁确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1065,
+                    645,
+                    163,
+                    36
+                ]
+            }
+        }
+    },
+    "出击-通用-已进入星之流浪者界面-请求选择": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    465,
+                    510,
+                    690,
+                    210
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/星之流浪者/请求疑心乐曲.png"
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 350,
+        "action": "Click"
+    },
+    "出击-通用-跳过": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1052,
+                    629,
+                    88,
+                    81
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/跳过.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1089,
+                    653,
+                    151,
+                    32
+                ]
+            }
+        }
+    },
+    "出击-通用-继续": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1009,
+                    619,
+                    117,
+                    86
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/继续.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1063,
+                    643,
+                    147,
+                    40
+                ]
+            }
+        }
+    }
+}

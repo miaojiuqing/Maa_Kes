@@ -1,0 +1,70 @@
+{
+    "出击-道中-已进入事件界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    113,
+                    496,
+                    1112,
+                    86
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/已进入事件.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-战中-已进入战斗界面",
+            "出击-道中-事件-获取",
+            "出击-道中-事件-可以战斗",
+            "出击-道中-事件-可以摇骰子"
+        ]
+    },
+    "出击-道中-事件-可以战斗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "threshold": [
+                    0.93
+                ],
+                "green_mask": true,
+                "roi": [
+                    1162,
+                    574,
+                    102,
+                    106
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/开始战斗.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "杀 杀 杀 !"
+        },
+        "action": "Click",
+        "next": [
+            "[JumpBack]出击-道中-事件-可以战斗-触发战斗",
+            "出击-战中-已进入战斗界面",
+            "出击-道中-事件-可以战斗"
+        ]
+    },
+    "出击-道中-事件-可以战斗-触发战斗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    502,
+                    546,
+                    85,
+                    89
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/发起攻击.png"
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}

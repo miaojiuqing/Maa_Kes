@@ -1,0 +1,139 @@
+{
+    "出击-道中-已进入篝火界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    308,
+                    494,
+                    84,
+                    104
+                ],
+                "threshold": [
+                    0.9
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/篝火/已准备坐火.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "🔥篝火很温暖,休息一下吧"
+        },
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "出击-道中-篝火-休息确认",
+            "[JumpBack]出击-道中-篝火-点击休息"
+        ]
+    },
+    "出击-道中-篝火-点击休息": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "threshold": [
+                    0.9
+                ],
+                "roi": [
+                    308,
+                    494,
+                    84,
+                    104
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/篝火/已准备坐火.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "出击-道中-篝火-休息确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    327,
+                    269,
+                    112,
+                    175
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/篝火/休息确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    721,
+                    465,
+                    260,
+                    31
+                ]
+            }
+        },
+        "next": [
+            "出击-道中-篝火-休息过了",
+            "出击-道中-篝火-休息确认"
+        ]
+    },
+    "出击-道中-篝火-休息过了": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "threshold": [
+                    0.9
+                ],
+                "roi": [
+                    308,
+                    494,
+                    84,
+                    104
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/篝火/休息过了.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "休息好了,动身吧"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1041,
+                    637,
+                    196,
+                    45
+                ]
+            }
+        },
+        "next": [
+            "出击-道中-已进入路程选择界面",
+            "[JumpBack]出击-通用-继续"
+        ]
+    },
+    "出击-道中-篝火-商店检查": {
+        //以后再说
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    342,
+                    91,
+                    367,
+                    181
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/篝火/德朗商店/发现商店.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "💰德朗的商店开门嘞,不过咱就看看,不买~"
+        },
+        "action": "Click"
+    }
+}
