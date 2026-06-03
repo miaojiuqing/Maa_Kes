@@ -2,7 +2,8 @@
     "task": [
         {
             "name": "清体力",
-            "label": "⚔️清体力_模拟处",
+            "label": "模拟",
+            "icon": "./resource/image/图标/任务图标/模拟.png",
             "default_check": true,
             "group": [
                 "日常"

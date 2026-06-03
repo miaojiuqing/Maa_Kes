@@ -34,5 +34,23 @@
             }
         },
         "action": "Click"
+    },
+    "首页点击-出击": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1167,
+                    147,
+                    101,
+                    102
+                ],
+                "green_mask": true,
+                "template": [
+                    "通用/首页处按钮/出击.png"
+                ]
+            }
+        },
+        "action": "Click"
     }
 }
