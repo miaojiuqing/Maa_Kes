@@ -1,0 +1,363 @@
+{
+    "工具-自动战斗-任务开始层": {
+        "next": [
+            "通用-战中-已进入战斗界面",
+            "[JumpBack]空任务"
+        ]
+    },
+    "通用-战中-已进入战斗界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    1187,
+                    479,
+                    93,
+                    103
+                ],
+                "template": [
+                    "战斗/已进入战斗.png"
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-可发动卡牌",
+            "通用-战中-敌方行动中"
+        ]
+    },
+    "通用-战中-可发动卡牌": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    1056,
+                    538,
+                    165,
+                    174
+                ],
+                "template": [
+                    "战斗/可发动卡牌.png"
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-寻找怪物位置"
+        ]
+    },
+    "通用-战中-寻找怪物位置": {
+        "focus": {
+            "Node.Recognition.Succeeded": "正在寻找怪物位置..."
+        },
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "green_mask": true,
+                "roi": [
+                    576,
+                    3,
+                    704,
+                    523
+                ],
+                "template": [
+                    "战斗/怪物识别/正义.png",
+                    "战斗/怪物识别/本能.png",
+                    "战斗/怪物识别/热情.png",
+                    "战斗/怪物识别/秩序.png",
+                    "战斗/怪物识别/虚无.png"
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-拖动卡牌给于敌人-强化类",
+            "通用-战中-拖动卡牌给于敌人-技能类",
+            "通用-战中-拖动卡牌给于敌人-状态异常类",
+            "通用-战中-拖动卡牌给于敌人-攻击类",
+            "通用-战中-费用消耗至0",
+            "通用-战中-拖动卡牌给于敌人-无可发动卡牌"
+        ]
+    },
+    "通用-战中-费用消耗至0": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    599,
+                    626,
+                    82,
+                    93
+                ],
+                "template": [
+                    "战斗/卡牌识别/0费了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "通用-战中-可发动卡牌"
+            }
+        },
+        "next": [
+            "通用-战中-敌方行动中",
+            "通用-战中-费用消耗至0",
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-无可发动卡牌": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    265,
+                    597,
+                    743,
+                    57
+                ],
+                "template": [
+                    "战斗/卡牌识别/强化类卡牌.png",
+                    "战斗/卡牌识别/攻击类卡牌.png",
+                    "战斗/卡牌识别/技能类卡牌.png",
+                    "战斗/卡牌识别/状态异常类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "通用-战中-可发动卡牌"
+            }
+        },
+        "next": [
+            "通用-战中-敌方行动中",
+            "通用-战中-费用消耗至0",
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战中-敌方行动中": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    1132,
+                    554,
+                    148,
+                    166
+                ],
+                "template": [
+                    "战斗/敌方行动中.png"
+                ]
+            }
+        },
+        "next": [
+            "通用-战斗-手中仍有可用卡牌",
+            "通用-战中-敌方行动中",
+            "通用-战中-可发动卡牌",
+            "通用-战中-已进入战斗界面",
+            "[JumpBack]通用-战斗结束"
+        ]
+    },
+    "通用-战斗-手中仍有可用卡牌": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    638,
+                    388,
+                    89,
+                    90
+                ],
+                "template": [
+                    "战斗/仍有可用卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    324,
+                    421,
+                    228,
+                    32
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "通用-战斗-手中仍有可用卡牌",
+            "通用-战中-可发动卡牌"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-强化类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张强化卡"
+        },
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "战斗/卡牌识别/强化类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    60,
+                    35,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-攻击类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张攻击卡"
+        },
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "战斗/卡牌识别/攻击类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    60,
+                    35,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-状态异常类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张状态异常卡"
+        },
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "战斗/卡牌识别/状态异常类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    60,
+                    35,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-技能类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张技能卡"
+        },
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    233,
+                    515,
+                    876,
+                    90
+                ],
+                "template": [
+                    "战斗/卡牌识别/技能类卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    0,
+                    -30,
+                    0,
+                    0
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    60,
+                    35,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-已进入战斗界面"
+        ]
+    },
+    "通用-战斗结束": {
+        //啥也识别不到就当结束了呗
+    }
+}

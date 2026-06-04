@@ -73,7 +73,8 @@
         "tasks/工具/剧情跳过.json",
         "tasks/工具/自动推图.json",
         "tasks/工具/读消息.json",
-        "tasks/工具/教学红点清除.json"
+        "tasks/工具/教学红点清除.json",
+        "tasks/工具/自动战斗.json"
     ],
     "option": {
         "没做完别看了": {
