@@ -8,6 +8,8 @@
     "icon": "./resource/image/logo.png",
     "github": "https://github.com/miaojiuqing/Maa_KES",
     "version": "1.0.0",
+    "mirrorchyan_rid": "MaaKes",
+    "mirrorchyan_multiplatform": true,
     "controller": [
         {
             "name": "安卓端",
