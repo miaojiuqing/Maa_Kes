@@ -26,6 +26,7 @@
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%7CAndroid-blueviolet">
   <img alt="commit" src="https://img.shields.io/github/commit-activity/m/miaojiuqing/Maa_KES">
   <img alt="stars" src="https://img.shields.io/github/stars/miaojiuqing/Maa_KES">
+   <a href="https://mirrorchyan.com/zh/projects?rid=MaaKes" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
 </p>
 
 ---
