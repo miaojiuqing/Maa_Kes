@@ -1,0 +1,29 @@
+{
+    "肉鸽通用-命运获得确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    592,
+                    633,
+                    99,
+                    76
+                ],
+                "template": [
+                    "肉鸽类/通用/命运选择/命运获得.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1044,
+                    652,
+                    189,
+                    35
+                ]
+            }
+        }
+    }
+}

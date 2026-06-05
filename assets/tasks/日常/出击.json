@@ -25,13 +25,25 @@
             "cases": [
                 {
                     "name": "出击战斗策略-进去就退",
-                    "label": "没做接口",
-                    "pipeline_override": {}
+                    "label": "进去就退",
+                    "pipeline_override": {
+                        "出击-战斗策略-接口层": {
+                            "next": [
+                                "出击-策略-进了就退-已进入星之流浪者界面"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "出击战斗策略-尝试打完第一面",
                     "label": "尝试打完第一面",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "出击-战斗策略-接口层": {
+                            "next": [
+                                "出击-策略-打完第一面-已进入星之流浪者界面"
+                            ]
+                        }
+                    }
                 }
             ]
         },

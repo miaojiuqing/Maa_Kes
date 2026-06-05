@@ -15,9 +15,149 @@
             }
         },
         "next": [
+            "出击-策略-进了就退-已可以退出",
             "[JumpBack]出击-通用-命运选择",
             "[JumpBack]出击-通用-已进入星之流浪者界面-请求选择",
             "[JumpBack]出击-通用-继续",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]肉鸽通用-命运获得确认"
+        ]
+    },
+    "出击-策略-进了就退-已可以退出": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1185,
+                    0,
+                    86,
+                    83
+                ],
+                "template": [
+                    "肉鸽类/通用/菜单.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "出击-策略-打完就退-已进入逃跑界面",
+            "出击-策略-进了就退-已可以退出"
+        ]
+    },
+    "出击-策略-打完就退-已进入逃跑界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1010,
+                    626,
+                    82,
+                    87
+                ],
+                "template": [
+                    "肉鸽类/通用/逃脱.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "出击-策略-打完就退-逃跑确认",
+            "出击-策略-打完就退-已进入逃跑界面"
+        ]
+    },
+    "出击-策略-打完就退-逃跑确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    605,
+                    310,
+                    96,
+                    75
+                ],
+                "template": [
+                    "日常/出击/逃离确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    704,
+                    440,
+                    294,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "出击-策略-打完就退-撤离成功",
+            "出击-策略-打完就退-逃跑确认",
+            "[JumpBack]通用-点击叉叉"
+        ]
+    },
+    "出击-策略-打完就退-撤离成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    713,
+                    180,
+                    80,
+                    222
+                ],
+                "template": [
+                    "日常/出击/出击结算.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1026,
+                    652,
+                    185,
+                    20
+                ]
+            }
+        },
+        "next": [
+            "出击-通用-结算后点击确认",
+            "出击-策略-打完就退-撤离成功"
+        ]
+    },
+    "出击-通用-结算后点击确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    985,
+                    619,
+                    82,
+                    86
+                ],
+                "template": [
+                    "日常/出击/下一步.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1026,
+                    652,
+                    185,
+                    20
+                ]
+            }
+        },
+        "next": [
+            "出击-通用-结算后点击确认",
             "[JumpBack]黑屏计数"
         ]
     },
