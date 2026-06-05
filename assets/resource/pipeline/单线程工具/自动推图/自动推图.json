@@ -132,6 +132,7 @@
         ]
     },
     "工具-自动推图-关卡已结束-可直接下一关": {
+        "enabled": true,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
