@@ -47,7 +47,8 @@
         "工具-自动推图-可直接下一关时直接点击下一关": {
             "label": "可直接下一关时直接点击下一关",
             "type": "switch",
-            "default_case": "Yes",
+            "default_case": "No",
+            "description": "开启后虽然刷取速率提升但可能会错过支线",
             "cases": [
                 {
                     "name": "Yes",
