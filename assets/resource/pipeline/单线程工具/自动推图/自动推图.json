@@ -40,6 +40,9 @@
                     "单线程工具/自动推图/战斗任务/已通关.png"
                 ]
             }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "关卡打完啦~剧情卡厄思暂不支持~"
         }
     },
     "工具-自动推图-画面中关卡未解锁": {
@@ -56,7 +59,7 @@
             }
         },
         "focus": {
-            "Node.Recognition.Succeeded": "关卡打完啦~剧情卡厄思暂不支持~"
+            "Node.Recognition.Succeeded": "发现可挑战的关卡！"
         },
         "action": "Click",
         "next": [
