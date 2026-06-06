@@ -32,6 +32,29 @@
         },
         "action": "StopTask"
     },
+    "进游戏-息屏点击": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "进入游戏/息屏点击/初始.png",
+                    "进入游戏/息屏点击/维罗妮卡.png",
+                    "进入游戏/息屏点击/蕾伊.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    355,
+                    215,
+                    556,
+                    309
+                ]
+            }
+        }
+    },
     "进游戏-任务开始层": {
         "next": [
             "[JumpBack]进游戏-点击领取签到奖励",
@@ -41,7 +64,8 @@
             "[JumpBack]通用-点击叉叉",
             "[JumpBack]进游戏-点击进入游戏",
             "[JumpBack]通用-点击返回",
-            "[JumpBack]黑屏计数"
+            "[JumpBack]黑屏计数",
+            "[JumpBack]进游戏-息屏点击"
         ]
     },
     "进游戏-已进入首页": {
