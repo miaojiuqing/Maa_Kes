@@ -71,6 +71,8 @@
         "tasks/日常/模拟处清体力.json",
         "tasks/日常/出击.json",
         "tasks/日常/奖励领取.json",
+        //肉鸽类
+        "tasks/肉鸽类/自动肉鸽.json",
         //单独运行工具
         "tasks/工具/剧情跳过.json",
         "tasks/工具/自动推图.json",
