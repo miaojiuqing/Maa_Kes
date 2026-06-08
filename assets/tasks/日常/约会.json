@@ -8,10 +8,10 @@
                 "日常"
             ],
             "entry": "日常-约会-任务开始层",
-            "description": "请确保你选择的角色是你有的,否则将一直切换城市",
+            "description": "请确保你选择的角色是你有的,否则将一直切换城市\n\n没有自己想要的角色请反馈给作者",
             "option": [
-                "日常-约会-首次进入区域选择"
-                // "日常-约会-约会候选"//自选三位角色作为共度时光候选
+                "日常-约会-首次进入区域选择",
+                "日常-约会-约会角色选择" //自选角色作为共度时光候选
             ]
         }
     ],
@@ -61,6 +61,1556 @@
                         "日常-约会-点击进入所选地区": {
                             "template": [
                                 "日常/共度时光/地区选择/行政区.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "日常-约会-约会角色选择": {
+            "label": "共度时光角色选择",
+            "type": "switch",
+            "description": "关闭后默认为蕾伊>米卡>特莱莎>随便\n\n检查到没旅行卷了会自动结束",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "option": [
+                        "日常-约会-角色优先级_1",
+                        "日常-约会-角色优先级_2",
+                        "日常-约会-角色优先级_3",
+                        "日常-约会-角色优先级_4",
+                        "日常-约会-角色优先级_5"
+                    ]
+                },
+                {
+                    "name": "No"
+                }
+            ]
+        },
+        "日常-约会-角色优先级_1": {
+            "label": "优先级_1",
+            "cases": [
+                {
+                    "name": "约会优先级_1",
+                    "label": "优先级_1",
+                    "option": [
+                        "日常-约会-优先级_1-角色属性筛选"
+                    ]
+                }
+            ]
+        },
+        "日常-约会-优先级_1-角色属性筛选": {
+            "label": "根据属性筛选",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/ALL.png",
+            "cases": [
+                {
+                    "name": "约会角色属性选择-随便",
+                    "label": "随便",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/随便.png"
+                            ]
+                        },
+                        "日常-约会-检查是否有爱心_角色1": {
+                            "roi_offset": [
+                                0,
+                                0,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "option": [
+                        "约会角色1-属性选择-热情"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "option": [
+                        "约会角色1-属性选择-正义"
+                    ]
+                },
+                {
+                    "name": "约会角色1-属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "option": [
+                        "约会角色1-属性选择-秩序"
+                    ]
+                },
+                {
+                    "name": "约会角色1-属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "option": [
+                        "约会角色1-属性选择-本能"
+                    ]
+                },
+                {
+                    "name": "约会角色1-属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "option": [
+                        "约会角色1-属性选择-虚无"
+                    ]
+                }
+            ]
+        },
+        "约会角色1-属性选择-热情": {
+            "label": "热情",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/热情.png",
+            "cases": [
+                {
+                    "name": "约会对象-维罗妮卡",
+                    "label": "维罗妮卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/维罗妮卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-赛琳娜",
+                    "label": "赛琳娜",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/赛琳娜.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-欧文",
+                    "label": "欧文",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/欧文.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-玛丽贝尔",
+                    "label": "玛丽贝尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/玛丽贝尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色1-属性选择-正义": {
+            "label": "正义",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/正义.png",
+            "cases": [
+                {
+                    "name": "约会对象-米卡",
+                    "label": "米卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/米卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-贝丽尔",
+                    "label": "贝丽尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/贝丽尔.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-小春",
+                    "label": "小春",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/小春.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色1-属性选择-秩序": {
+            "label": "秩序",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/秩序.png",
+            "cases": [
+                {
+                    "name": "约会对象-九",
+                    "label": "九",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/九.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-艾米尔",
+                    "label": "艾米尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/艾米尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色1-属性选择-本能": {
+            "label": "本能",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/本能.png",
+            "cases": [
+                {
+                    "name": "约会对象-尼娅",
+                    "label": "尼娅",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/尼娅.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡修斯",
+                    "label": "卡修斯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡修斯.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡利佩",
+                    "label": "卡利佩",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡利佩.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色1-属性选择-虚无": {
+            "label": "虚无",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/虚无.png",
+            "cases": [
+                {
+                    "name": "约会对象-蕾伊",
+                    "label": "蕾伊",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/蕾伊.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-特莱莎",
+                    "label": "特莱莎",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/特莱莎.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-凛",
+                    "label": "凛",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/凛.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-绯",
+                    "label": "绯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_1": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/绯.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "日常-约会-角色优先级_2": {
+            "label": "优先级_2",
+            "cases": [
+                {
+                    "name": "约会优先级_2",
+                    "label": "优先级_2",
+                    "option": [
+                        "日常-约会-优先级_2-角色属性筛选"
+                    ]
+                }
+            ]
+        },
+        "日常-约会-优先级_2-角色属性筛选": {
+            "label": "根据属性筛选",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/ALL.png",
+            "cases": [
+                {
+                    "name": "约会角色属性选择-随便",
+                    "label": "随便",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/随便.png"
+                            ]
+                        },
+                        "日常-约会-检查是否有爱心_角色2": {
+                            "roi_offset": [
+                                0,
+                                0,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "option": [
+                        "约会角色2-属性选择-热情"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "option": [
+                        "约会角色2-属性选择-正义"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "option": [
+                        "约会角色2-属性选择-秩序"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "option": [
+                        "约会角色2-属性选择-本能"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "option": [
+                        "约会角色2-属性选择-虚无"
+                    ]
+                }
+            ]
+        },
+        "约会角色2-属性选择-热情": {
+            "label": "热情",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/热情.png",
+            "cases": [
+                {
+                    "name": "约会对象-维罗妮卡",
+                    "label": "维罗妮卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/维罗妮卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-赛琳娜",
+                    "label": "赛琳娜",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/赛琳娜.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-欧文",
+                    "label": "欧文",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/欧文.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-玛丽贝尔",
+                    "label": "玛丽贝尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/玛丽贝尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色2-属性选择-正义": {
+            "label": "正义",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/正义.png",
+            "cases": [
+                {
+                    "name": "约会对象-米卡",
+                    "label": "米卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/米卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-贝丽尔",
+                    "label": "贝丽尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/贝丽尔.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-小春",
+                    "label": "小春",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/小春.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色2-属性选择-秩序": {
+            "label": "秩序",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/秩序.png",
+            "cases": [
+                {
+                    "name": "约会对象-九",
+                    "label": "九",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/九.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-艾米尔",
+                    "label": "艾米尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/艾米尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色2-属性选择-本能": {
+            "label": "本能",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/本能.png",
+            "cases": [
+                {
+                    "name": "约会对象-尼娅",
+                    "label": "尼娅",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/尼娅.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡修斯",
+                    "label": "卡修斯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡修斯.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡利佩",
+                    "label": "卡利佩",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡利佩.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色2-属性选择-虚无": {
+            "label": "虚无",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/虚无.png",
+            "cases": [
+                {
+                    "name": "约会对象-蕾伊",
+                    "label": "蕾伊",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/蕾伊.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-特莱莎",
+                    "label": "特莱莎",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/特莱莎.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-凛",
+                    "label": "凛",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/凛.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-绯",
+                    "label": "绯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_2": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/绯.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "日常-约会-角色优先级_3": {
+            "label": "优先级_3",
+            "cases": [
+                {
+                    "name": "约会优先级_3",
+                    "label": "优先级_3",
+                    "option": [
+                        "日常-约会-优先级_3-角色属性筛选"
+                    ]
+                }
+            ]
+        },
+        "日常-约会-优先级_3-角色属性筛选": {
+            "label": "根据属性筛选",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/ALL.png",
+            "cases": [
+                {
+                    "name": "约会角色属性选择-随便",
+                    "label": "随便",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/随便.png"
+                            ]
+                        },
+                        "日常-约会-检查是否有爱心_角色3": {
+                            "roi_offset": [
+                                0,
+                                0,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "option": [
+                        "约会角色3-属性选择-热情"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "option": [
+                        "约会角色3-属性选择-正义"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "option": [
+                        "约会角色3-属性选择-秩序"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "option": [
+                        "约会角色3-属性选择-本能"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "option": [
+                        "约会角色3-属性选择-虚无"
+                    ]
+                }
+            ]
+        },
+        "约会角色3-属性选择-热情": {
+            "label": "热情",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/热情.png",
+            "cases": [
+                {
+                    "name": "约会对象-维罗妮卡",
+                    "label": "维罗妮卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/维罗妮卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-赛琳娜",
+                    "label": "赛琳娜",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/赛琳娜.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-欧文",
+                    "label": "欧文",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/欧文.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-玛丽贝尔",
+                    "label": "玛丽贝尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/玛丽贝尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色3-属性选择-正义": {
+            "label": "正义",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/正义.png",
+            "cases": [
+                {
+                    "name": "约会对象-米卡",
+                    "label": "米卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/米卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-贝丽尔",
+                    "label": "贝丽尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/贝丽尔.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-小春",
+                    "label": "小春",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/小春.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色3-属性选择-秩序": {
+            "label": "秩序",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/秩序.png",
+            "cases": [
+                {
+                    "name": "约会对象-九",
+                    "label": "九",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/九.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-艾米尔",
+                    "label": "艾米尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/艾米尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色3-属性选择-本能": {
+            "label": "本能",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/本能.png",
+            "cases": [
+                {
+                    "name": "约会对象-尼娅",
+                    "label": "尼娅",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/尼娅.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡修斯",
+                    "label": "卡修斯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡修斯.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡利佩",
+                    "label": "卡利佩",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡利佩.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色3-属性选择-虚无": {
+            "label": "虚无",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/虚无.png",
+            "cases": [
+                {
+                    "name": "约会对象-蕾伊",
+                    "label": "蕾伊",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/蕾伊.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-特莱莎",
+                    "label": "特莱莎",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/特莱莎.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-凛",
+                    "label": "凛",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/凛.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-绯",
+                    "label": "绯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_3": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/绯.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "日常-约会-角色优先级_4": {
+            "label": "优先级_4",
+            "cases": [
+                {
+                    "name": "约会优先级_4",
+                    "label": "优先级_4",
+                    "option": [
+                        "日常-约会-优先级_4-角色属性筛选"
+                    ]
+                }
+            ]
+        },
+        "日常-约会-优先级_4-角色属性筛选": {
+            "label": "根据属性筛选",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/ALL.png",
+            "cases": [
+                {
+                    "name": "约会角色属性选择-随便",
+                    "label": "随便",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/随便.png"
+                            ]
+                        },
+                        "日常-约会-检查是否有爱心_角色4": {
+                            "roi_offset": [
+                                0,
+                                0,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "option": [
+                        "约会角色4-属性选择-热情"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "option": [
+                        "约会角色4-属性选择-正义"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "option": [
+                        "约会角色4-属性选择-秩序"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "option": [
+                        "约会角色4-属性选择-本能"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "option": [
+                        "约会角色4-属性选择-虚无"
+                    ]
+                }
+            ]
+        },
+        "约会角色4-属性选择-热情": {
+            "label": "热情",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/热情.png",
+            "cases": [
+                {
+                    "name": "约会对象-维罗妮卡",
+                    "label": "维罗妮卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/维罗妮卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-赛琳娜",
+                    "label": "赛琳娜",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/赛琳娜.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-欧文",
+                    "label": "欧文",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/欧文.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-玛丽贝尔",
+                    "label": "玛丽贝尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/玛丽贝尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色4-属性选择-正义": {
+            "label": "正义",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/正义.png",
+            "cases": [
+                {
+                    "name": "约会对象-米卡",
+                    "label": "米卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/米卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-贝丽尔",
+                    "label": "贝丽尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/贝丽尔.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-小春",
+                    "label": "小春",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/小春.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色4-属性选择-秩序": {
+            "label": "秩序",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/秩序.png",
+            "cases": [
+                {
+                    "name": "约会对象-九",
+                    "label": "九",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/九.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-艾米尔",
+                    "label": "艾米尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/艾米尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色4-属性选择-本能": {
+            "label": "本能",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/本能.png",
+            "cases": [
+                {
+                    "name": "约会对象-尼娅",
+                    "label": "尼娅",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/尼娅.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡修斯",
+                    "label": "卡修斯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡修斯.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡利佩",
+                    "label": "卡利佩",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡利佩.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色4-属性选择-虚无": {
+            "label": "虚无",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/虚无.png",
+            "cases": [
+                {
+                    "name": "约会对象-蕾伊",
+                    "label": "蕾伊",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/蕾伊.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-特莱莎",
+                    "label": "特莱莎",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/特莱莎.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-凛",
+                    "label": "凛",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/凛.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-绯",
+                    "label": "绯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_4": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/绯.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "日常-约会-角色优先级_5": {
+            "label": "优先级_5",
+            "cases": [
+                {
+                    "name": "约会优先级_5",
+                    "label": "优先级_5",
+                    "option": [
+                        "日常-约会-优先级_5-角色属性筛选"
+                    ]
+                }
+            ]
+        },
+        "日常-约会-优先级_5-角色属性筛选": {
+            "label": "根据属性筛选",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/ALL.png",
+            "cases": [
+                {
+                    "name": "约会角色属性选择-随便",
+                    "label": "随便",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/随便.png"
+                            ]
+                        },
+                        "日常-约会-检查是否有爱心_角色5": {
+                            "roi_offset": [
+                                0,
+                                0,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "option": [
+                        "约会角色5-属性选择-热情"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "option": [
+                        "约会角色5-属性选择-正义"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "option": [
+                        "约会角色5-属性选择-秩序"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "option": [
+                        "约会角色5-属性选择-本能"
+                    ]
+                },
+                {
+                    "name": "约会角色属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "option": [
+                        "约会角色5-属性选择-虚无"
+                    ]
+                }
+            ]
+        },
+        "约会角色5-属性选择-热情": {
+            "label": "热情",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/热情.png",
+            "cases": [
+                {
+                    "name": "约会对象-维罗妮卡",
+                    "label": "维罗妮卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/维罗妮卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-赛琳娜",
+                    "label": "赛琳娜",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/赛琳娜.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-欧文",
+                    "label": "欧文",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/欧文.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-玛丽贝尔",
+                    "label": "玛丽贝尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/热情/玛丽贝尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色5-属性选择-正义": {
+            "label": "正义",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/正义.png",
+            "cases": [
+                {
+                    "name": "约会对象-米卡",
+                    "label": "米卡",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/米卡.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-贝丽尔",
+                    "label": "贝丽尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/贝丽尔.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-小春",
+                    "label": "小春",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/正义/小春.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色5-属性选择-秩序": {
+            "label": "秩序",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/秩序.png",
+            "cases": [
+                {
+                    "name": "约会对象-九",
+                    "label": "九",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/九.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-艾米尔",
+                    "label": "艾米尔",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/秩序/艾米尔.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色5-属性选择-本能": {
+            "label": "本能",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/本能.png",
+            "cases": [
+                {
+                    "name": "约会对象-尼娅",
+                    "label": "尼娅",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/尼娅.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡修斯",
+                    "label": "卡修斯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡修斯.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-卡利佩",
+                    "label": "卡利佩",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/本能/卡利佩.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "约会角色5-属性选择-虚无": {
+            "label": "虚无",
+            "type": "select",
+            "icon": "./resource/image/图标/属性/虚无.png",
+            "cases": [
+                {
+                    "name": "约会对象-蕾伊",
+                    "label": "蕾伊",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/蕾伊.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-特莱莎",
+                    "label": "特莱莎",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/特莱莎.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-凛",
+                    "label": "凛",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/凛.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "约会对象-绯",
+                    "label": "绯",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
+                    "pipeline_override": {
+                        "日常-约会-角色优先级_5": {
+                            "template": [
+                                "日常/共度时光/角色小头/虚无/绯.png"
                             ]
                         }
                     }
