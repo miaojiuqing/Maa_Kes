@@ -239,7 +239,7 @@
                 {
                     "name": "出击-角色选择-维罗妮卡",
                     "label": "维罗妮卡",
-                    "icon": "./resource/image/图标/属性/热情.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/维罗妮卡.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -256,7 +256,7 @@
                 {
                     "name": "出击-角色选择-赛琳娜",
                     "label": "赛琳娜",
-                    "icon": "./resource/image/图标/属性/热情.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/赛琳娜.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -273,7 +273,7 @@
                 {
                     "name": "出击-角色选择-欧文",
                     "label": "欧文",
-                    "icon": "./resource/image/图标/属性/热情.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/欧文.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -290,7 +290,7 @@
                 {
                     "name": "出击-角色选择-玛丽贝尔",
                     "label": "玛丽贝尔",
-                    "icon": "./resource/image/图标/属性/热情.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/热情/玛丽贝尔.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -308,7 +308,7 @@
                 {
                     "name": "出击-角色选择-米卡",
                     "label": "米卡",
-                    "icon": "./resource/image/图标/属性/正义.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/米卡.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -325,7 +325,7 @@
                 {
                     "name": "出击-角色选择-贝丽尔",
                     "label": "贝丽尔",
-                    "icon": "./resource/image/图标/属性/正义.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/贝丽尔.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -342,7 +342,7 @@
                 {
                     "name": "出击-角色选择-小春",
                     "label": "小春",
-                    "icon": "./resource/image/图标/属性/正义.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/正义/小春.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -360,7 +360,7 @@
                 {
                     "name": "出击-角色选择-九",
                     "label": "九",
-                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/九.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -377,7 +377,7 @@
                 {
                     "name": "出击-角色选择-艾米尔",
                     "label": "艾米尔",
-                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/秩序/艾米尔.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -395,7 +395,7 @@
                 {
                     "name": "出击-角色选择-尼娅",
                     "label": "尼娅",
-                    "icon": "./resource/image/图标/属性/本能.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/尼娅.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -412,7 +412,7 @@
                 {
                     "name": "出击-角色选择-卡修斯",
                     "label": "卡修斯",
-                    "icon": "./resource/image/图标/属性/本能.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡修斯.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -429,7 +429,7 @@
                 {
                     "name": "出击-角色选择-卡利佩",
                     "label": "卡利佩",
-                    "icon": "./resource/image/图标/属性/本能.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/本能/卡利佩.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -447,7 +447,7 @@
                 {
                     "name": "出击-角色选择-凛",
                     "label": "凛",
-                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/凛.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -464,7 +464,7 @@
                 {
                     "name": "出击-角色选择-绯",
                     "label": "绯",
-                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/绯.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -481,7 +481,7 @@
                 {
                     "name": "出击-角色选择-蕾伊",
                     "label": "蕾伊",
-                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/蕾伊.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
@@ -498,7 +498,7 @@
                 {
                     "name": "出击-角色选择-特莱莎",
                     "label": "特莱莎",
-                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "icon": "./resource/image/日常/共度时光/角色小头/虚无/特莱莎.png",
                     "pipeline_override": {
                         "出击-选角色-点击选中所需角色": {
                             "template": [
