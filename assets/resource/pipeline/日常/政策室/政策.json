@@ -29,26 +29,29 @@
         ]
     },
     "日常-政策-已进入方舟城市": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    242,
-                    570,
-                    87,
-                    117
-                ],
-                "template": [
-                    "日常/政策审阅/点击进入政策室.png"
-                ]
-            }
-        },
+        // "recognition": {
+        //     "type": "TemplateMatch",
+        //     "param": {
+        //         "roi": [
+        //             242,
+        //             570,
+        //             87,
+        //             117
+        //         ],
+        //         "template": [
+        //             "日常/政策审阅/点击进入政策室.png"
+        //         ]
+        //     }
+        // },
         "action": "Click",
         "next": [
+            "日常-政策-灾后重建工作策略选择",
             "日常-政策-已进入政策室",
             "日常-政策-已进入方舟城市",
-            "[JumpBack]通用-诺诺对话"
-        ]
+            "[JumpBack]通用-诺诺对话",
+            "[JumpBack]通用-点击屏幕"
+        ],
+        "timeout": 12000 //2分钟
     },
     "日常-政策-灾后重建工作策略选择": {
         "recognition": {
@@ -125,6 +128,7 @@
         }
     },
     "日常-政策-开始审批": {
+        //分流
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -140,36 +144,37 @@
             }
         },
         "next": [
+            "[JumpBack]日常-政策-战斗任务解锁确认",
             "日常-政策审阅-审批结束",
-            "[JumpBack]日常-政策-新关卡解锁",
             "[JumpBack]日常-政策-审批奖励确认",
             "[JumpBack]日常-政策-固定路径盖章"
         ]
     },
-    "日常-政策-固定路径盖章": {
-        "action": {
-            "type": "Swipe",
+    "日常-政策-扫描政策奖励_优先级1": { //默认战斗关
+        "recognition": {
+            "type": "TemplateMatch",
             "param": {
-                "pressure": 2,
-                "duration": 800,
-                "begin": [
-                    895,
-                    570,
-                    89,
-                    63
+                "roi": [
+                    606,
+                    195,
+                    660,
+                    335
                 ],
-                "end": [
-                    1025,
-                    197,
-                    167,
-                    227
+                "template": [
+                    "日常/政策审阅/政策特殊奖励/战斗关卡解锁.png"
                 ]
             }
         },
-        "post_delay": 800
+        "focus": {
+            "Node.Recognition.Succeeded": "将解锁新的战斗任务,请及时处理"
+        },
+        "next": [
+            "[JumpBack]日常-政策-战斗任务解锁确认",
+            "[JumpBack]日常-政策-固定路径盖章"
+        ]
     },
-    "日常-政策-新关卡解锁": {
-        //直接跳转去打，打完回来
+    "日常-政策-战斗任务解锁确认": {
+        //直接跳转去打，打完回来，放弃
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -185,7 +190,7 @@
             }
         },
         "focus": {
-            "Node.Recognition.Succeeded": "解锁了全新关卡,舰长记得打哦~"
+            "Node.Recognition.Succeeded": "确认解锁了全新战斗任务,记得处理"
         },
         "action": {
             "type": "Click",
@@ -197,7 +202,77 @@
                     38
                 ]
             }
-        }
+        },
+        "pre_delay": 150,
+        "post_delay": 500
+    },
+    "日常-政策-固定路径盖章": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    802,
+                    650,
+                    273,
+                    66
+                ],
+                "template": [
+                    "日常/政策审阅/开始审批.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "pressure": 2,
+                "duration": 800,
+                "begin": [
+                    895,
+                    570,
+                    89,
+                    63
+                ],
+                "end": "日常-政策-扫描政策奖励_优先级1"
+            }
+        },
+        "post_delay": 800
+    },
+    "日常-政策-本周期政策已结束": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    986,
+                    622,
+                    184,
+                    78
+                ],
+                "template": [
+                    "日常/政策审阅/周期结算.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "本次周期已结束",
+            "Node.Action.Succeeded": "点击继续"
+        },
+        "pre_delay": 150,
+        "post_delay": 200,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1025,
+                    649,
+                    193,
+                    28
+                ]
+            }
+        },
+        "next": [
+            "日常-政策-已进入方舟城市",
+            "日常-政策-本周期政策已结束"
+        ]
     },
     "日常-政策-审批奖励确认": {
         "recognition": {
