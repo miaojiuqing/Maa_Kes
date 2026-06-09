@@ -130,6 +130,7 @@
                 {
                     "name": "重建方案选择-奖励依据-高阶战斗记忆",
                     "label": "高阶战斗记忆",
+                    "icon": "./resource/image/图标/养成材料/主战升级.png",
                     "pipeline_override": {
                         "日常-政策-灾后重建方案选择-优先级2": {
                             "template": [
@@ -184,6 +185,7 @@
                 {
                     "name": "重建方案选择-奖励依据-高阶战斗记忆",
                     "label": "高阶战斗记忆",
+                    "icon": "./resource/image/图标/养成材料/主战升级.png",
                     "pipeline_override": {
                         "日常-政策-灾后重建方案选择-优先级3": {
                             "template": [
@@ -238,6 +240,7 @@
                 {
                     "name": "重建方案选择-奖励依据-高阶战斗记忆",
                     "label": "高阶战斗记忆",
+                    "icon": "./resource/image/图标/养成材料/主战升级.png",
                     "pipeline_override": {
                         "日常-政策-灾后重建方案选择-优先级4": {
                             "template": [
