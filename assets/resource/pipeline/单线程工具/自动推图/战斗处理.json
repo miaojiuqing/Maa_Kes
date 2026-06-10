@@ -125,14 +125,16 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                "green_mask": true,
                 "roi": [
-                    1089,
-                    2,
-                    72,
-                    72
+                    1034,
+                    544,
+                    246,
+                    176
                 ],
                 "template": [
-                    "通用/战斗类/自动战斗中.png"
+                    "战斗/可发动卡牌.png",
+                    "战斗/敌方行动中.png"
                 ]
             }
         },
