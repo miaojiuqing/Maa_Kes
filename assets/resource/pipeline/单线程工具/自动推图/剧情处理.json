@@ -49,6 +49,9 @@
             "[JumpBack]工具-自动推图-有人说话_右下角",
             "[JumpBack]工具-自动推图-点击自动播放",
             "[JumpBack]工具-自动推图-左上角说话",
+            "[JumpBack]工具-自动推图-尝试结束事件",
+            "[JumpBack]工具-自动推图-调查",
+            "[JumpBack]工具-自动推图-点击丢骰子",
             "[JumpBack]空任务"
         ]
     },
@@ -233,5 +236,106 @@
         },
         "action": "Click",
         "repeat": 2
+    },
+    "工具-自动推图-调查": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    43,
+                    162,
+                    1227,
+                    386
+                ],
+                "green_mask": true,
+                "template": [
+                    "单线程工具/自动推图/特殊事件/放大镜调查.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "repeat": 2
+    },
+    "工具-自动推图-尝试结束事件": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    613,
+                    1280,
+                    107
+                ],
+                "template": [
+                    "单线程工具/自动推图/特殊事件/结束事件.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -35,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "工具-自动推图-点击结束事件",
+            "工具-自动推图-尝试结束事件"
+        ]
+    },
+    "工具-自动推图-点击结束事件": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    613,
+                    1280,
+                    107
+                ],
+                "template": [
+                    "单线程工具/自动推图/特殊事件/点击勾勾.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -35,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "工具-自动推图-点击丢骰子": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    493,
+                    178,
+                    327,
+                    314
+                ],
+                "template": [
+                    "日常/出击/选角色/道中/事件/骰子/已进入骰子界面.png",
+                    "日常/出击/选角色/道中/事件/骰子/赢了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "repeat": 5,
+        "repeat_delay": 150
     }
 }
