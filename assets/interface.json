@@ -22,7 +22,7 @@
             "description": "一定要用管理员身份运行!!!不然连不上窗口",
             "win32": {
                 "class_regex": "GLFW30",
-                "window_regex": "卡厄思梦境|Chaos Zero Nightmare",
+                "window_regex": "卡厄思梦境|卡厄思夢境|Chaos Zero Nightmare",
                 "screencap": "PrintWindow", // 截图方式
                 "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
                 "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
