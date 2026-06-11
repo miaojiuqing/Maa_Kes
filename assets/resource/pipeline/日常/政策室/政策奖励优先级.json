@@ -255,5 +255,69 @@
             }
         },
         "post_delay": 800
+    },
+    "日常-政策-扫描政策奖励_优先级4": { //默认寰宇通用材料
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    606,
+                    195,
+                    660,
+                    445
+                ],
+                "template": [
+                    "日常/政策审阅/政策特殊奖励/寰宇战术认证书.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "获得了寰宇战术认证书"
+        },
+        "next": [
+            "日常-政策-开始审批",
+            "[JumpBack]日常-政策-战斗任务解锁确认",
+            "日常-政策审阅-审批结束",
+            "[JumpBack]日常-政策-审批奖励确认",
+            "[JumpBack]日常-政策-灵活路径盖章_优先级4",
+            "[JumpBack]日常-政策-角色夸赞"
+        ]
+    },
+    "日常-政策-灵活路径盖章_优先级4": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    802,
+                    650,
+                    274,
+                    66
+                ],
+                "template": [
+                    "日常/政策审阅/开始审批.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "pressure": 2,
+                "duration": 800,
+                "begin": [
+                    895,
+                    570,
+                    89,
+                    64
+                ],
+                "end": "日常-政策-扫描政策奖励_优先级4",
+                "end_offset": [
+                    0,
+                    15,
+                    0,
+                    0
+                ]
+            }
+        },
+        "post_delay": 800
     }
 }
