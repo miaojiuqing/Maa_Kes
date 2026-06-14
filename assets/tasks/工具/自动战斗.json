@@ -2,6 +2,7 @@
     "task": [
         {
             "name": "自动战斗",
+            "label": "⚔️自动战斗",
             "default_check": false,
             "group": [
                 "工具"
