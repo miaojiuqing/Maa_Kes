@@ -9,20 +9,25 @@
     },
     "通用-战中-已进入战斗界面": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "green_mask": true,
-                "roi": [
-                    1034,
-                    544,
-                    246,
-                    176
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
                 ],
-                "template": [
-                    "战斗/可发动卡牌.png",
-                    "战斗/敌方行动中.png"
+                "expected": [
+                    0
                 ]
             }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "发现血条,确认为进入了战斗"
         },
         "next": [
             "通用-战中-可发动卡牌",
@@ -46,85 +51,65 @@
             }
         },
         "next": [
-            "通用-战中-寻找怪物位置"
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
         ]
     },
     "通用-战中-寻找怪物位置": {
-        "focus": {
-            "Node.Recognition.Succeeded": "正在寻找怪物位置..."
-        },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "order_by": "Random",
-                "green_mask": true,
-                "roi": [
-                    576,
-                    3,
-                    704,
-                    523
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
                 ],
-                "template": [
-                    "战斗/怪物识别/正义.png",
-                    "战斗/怪物识别/本能.png",
-                    "战斗/怪物识别/热情.png",
-                    "战斗/怪物识别/秩序.png",
-                    "战斗/怪物识别/虚无.png"
+                "expected": [
+                    0
                 ]
             }
         },
+        "focus": {
+            "Node.Action.Starting": "👀正在寻找怪物位置...",
+            "Node.Recognition.Succeeded": "找到你了!👁️"
+        },
         "next": [
+            "通用-战中-拖动卡牌给于敌人-崩溃类",
             "通用-战中-拖动卡牌给于敌人-强化类",
             "通用-战中-拖动卡牌给于敌人-技能类",
-            "通用-战中-拖动卡牌给于敌人-状态异常类",
+            "通用-战中-拖动卡牌给于敌人-异常类",
+            "通用-战中-拖动卡牌给于敌人-诅咒类",
             "通用-战中-拖动卡牌给于敌人-攻击类",
-            "通用-战中-费用消耗至0",
             "通用-战中-拖动卡牌给于敌人-无可发动卡牌"
         ]
     },
-    "通用-战中-费用消耗至0": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "green_mask": true,
-                "roi": [
-                    599,
-                    626,
-                    82,
-                    93
-                ],
-                "template": [
-                    "战斗/卡牌识别/0费了.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": "通用-战中-可发动卡牌"
-            }
-        },
-        "next": [
-            "通用-战中-敌方行动中",
-            "通用-战中-费用消耗至0",
-            "通用-战中-已进入战斗界面"
-        ]
-    },
     "通用-战中-拖动卡牌给于敌人-无可发动卡牌": {
+        "inverse": true,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "roi": [
-                    265,
-                    597,
-                    743,
-                    57
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
                 ],
-                "template": [
-                    "战斗/卡牌识别/强化类卡牌.png",
-                    "战斗/卡牌识别/攻击类卡牌.png",
-                    "战斗/卡牌识别/技能类卡牌.png",
-                    "战斗/卡牌识别/状态异常类卡牌.png"
+                "expected": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
                 ]
             }
         },
@@ -136,7 +121,7 @@
         },
         "next": [
             "通用-战中-敌方行动中",
-            "通用-战中-费用消耗至0",
+            "通用-战斗-手中仍有可用卡牌",
             "通用-战中-已进入战斗界面"
         ]
     },
@@ -196,22 +181,70 @@
             "通用-战中-可发动卡牌"
         ]
     },
+    "通用-战中-拖动卡牌给于敌人-崩溃类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试拯救干员于水火之中"
+        },
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    5
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    -5,
+                    30,
+                    1,
+                    50
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    0,
+                    100,
+                    1,
+                    50
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
+        ]
+    },
     "通用-战中-拖动卡牌给于敌人-强化类": {
         "focus": {
             "Node.Recognition.Succeeded": "尝试使用一张强化卡"
         },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "order_by": "Random",
-                "roi": [
-                    233,
-                    515,
-                    876,
-                    90
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
                 ],
-                "template": [
-                    "战斗/卡牌识别/强化类卡牌.png"
+                "expected": [
+                    2
                 ]
             }
         },
@@ -219,105 +252,23 @@
             "type": "Swipe",
             "param": {
                 "begin_offset": [
-                    0,
-                    -30,
-                    0,
-                    0
+                    -5,
+                    30,
+                    1,
+                    50
                 ],
                 "end": "通用-战中-寻找怪物位置",
                 "end_offset": [
-                    60,
-                    35,
                     0,
-                    0
+                    100,
+                    1,
+                    50
                 ]
             }
         },
         "next": [
-            "通用-战中-已进入战斗界面"
-        ]
-    },
-    "通用-战中-拖动卡牌给于敌人-攻击类": {
-        "focus": {
-            "Node.Recognition.Succeeded": "尝试使用一张攻击卡"
-        },
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "order_by": "Random",
-                "roi": [
-                    233,
-                    515,
-                    876,
-                    90
-                ],
-                "template": [
-                    "战斗/卡牌识别/攻击类卡牌.png",
-                    "战斗/卡牌识别/攻击类卡牌_1.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin_offset": [
-                    0,
-                    -30,
-                    0,
-                    0
-                ],
-                "end": "通用-战中-寻找怪物位置",
-                "end_offset": [
-                    60,
-                    35,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "通用-战中-已进入战斗界面"
-        ]
-    },
-    "通用-战中-拖动卡牌给于敌人-状态异常类": {
-        "focus": {
-            "Node.Recognition.Succeeded": "尝试使用一张状态异常卡"
-        },
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "order_by": "Random",
-                "roi": [
-                    233,
-                    515,
-                    876,
-                    90
-                ],
-                "template": [
-                    "战斗/卡牌识别/状态异常类卡牌.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin_offset": [
-                    0,
-                    -30,
-                    0,
-                    0
-                ],
-                "end": "通用-战中-寻找怪物位置",
-                "end_offset": [
-                    60,
-                    35,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "通用-战中-已进入战斗界面"
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
         ]
     },
     "通用-战中-拖动卡牌给于敌人-技能类": {
@@ -325,18 +276,20 @@
             "Node.Recognition.Succeeded": "尝试使用一张技能卡"
         },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "order_by": "Random",
-                "roi": [
-                    233,
-                    515,
-                    876,
-                    90
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
                 ],
-                "template": [
-                    "战斗/卡牌识别/技能类卡牌.png",
-                    "战斗/卡牌识别/技能类卡牌_2.png"
+                "expected": [
+                    3
                 ]
             }
         },
@@ -344,22 +297,158 @@
             "type": "Swipe",
             "param": {
                 "begin_offset": [
-                    0,
-                    -30,
-                    0,
-                    0
+                    -5,
+                    30,
+                    1,
+                    50
                 ],
                 "end": "通用-战中-寻找怪物位置",
                 "end_offset": [
-                    60,
-                    35,
                     0,
-                    0
+                    100,
+                    1,
+                    50
                 ]
             }
         },
         "next": [
-            "通用-战中-已进入战斗界面"
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-攻击类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张攻击卡"
+        },
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    1
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    -5,
+                    30,
+                    1,
+                    50
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    0,
+                    100,
+                    1,
+                    50
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-诅咒类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张诅咒卡"
+        },
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    4
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    -5,
+                    30,
+                    1,
+                    50
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    0,
+                    100,
+                    1,
+                    50
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
+        ]
+    },
+    "通用-战中-拖动卡牌给于敌人-异常类": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试使用一张状态异常卡"
+        },
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    6
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin_offset": [
+                    -5,
+                    30,
+                    1,
+                    50
+                ],
+                "end": "通用-战中-寻找怪物位置",
+                "end_offset": [
+                    0,
+                    100,
+                    1,
+                    50
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-寻找怪物位置",
+            "[JumpBack]空任务"
         ]
     },
     "通用-战斗结束": {
