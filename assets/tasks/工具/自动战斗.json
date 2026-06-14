@@ -7,18 +7,38 @@
                 "工具"
             ],
             "entry": "工具-自动战斗-任务开始层",
-            "description": "目前只对有属性的敌人有反应，没法用自动战斗的部分关卡(如卡厄思或者部分角色疗愈关)可用",
-            "pipeline_override": {
-                "通用-战中-敌方行动中": {
-                    "next": [
-                        "通用-战斗-手中仍有可用卡牌",
-                        "通用-战中-敌方行动中",
-                        "通用-战中-可发动卡牌",
-                        "通用-战中-已进入战斗界面",
-                        "[JumpBack]通用-战斗结束"
-                    ]
-                }
-            }
+            "description": "适用于无法战斗的场景",
+            "pipeline_override": {},
+            "option": [
+                "自动战斗-自动释放EGO技能"
+                // "自动战斗-卡牌优先级_1"
+            ]
         }
-    ]
+    ],
+    "option": {
+        "自动战斗-自动释放EGO技能": {
+            "label": "自动释放EGO",
+            "description": "只要EGO亮着就会放",
+            "type": "switch",
+            "default_case": "Yes",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "通用-战中-可发动EGO": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "通用-战中-可发动EGO": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

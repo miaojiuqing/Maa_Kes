@@ -34,6 +34,77 @@
             "通用-战中-敌方行动中"
         ]
     },
+    "通用-战中-可发动EGO": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    66,
+                    497,
+                    32,
+                    167
+                ],
+                "upper": [
+                    198,
+                    254,
+                    255
+                ],
+                "lower": [
+                    189,
+                    245,
+                    254
+                ],
+                "connected": true,
+                "count": 100
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "检查有可发动的EGO技能"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    15,
+                    0,
+                    45,
+                    20
+                ]
+            }
+        },
+        "next": [
+            "通用-战中-已选中EGO",
+            "通用-战中-可发动EGO"
+        ],
+        "timeout": 5000
+    },
+    "通用-战中-已选中EGO": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    71,
+                    487,
+                    73,
+                    221
+                ],
+                "template": [
+                    "通用/战斗类/EGO识别/已选中EGO.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    201,
+                    367,
+                    248,
+                    152
+                ]
+            }
+        }
+    },
     "通用-战中-可发动卡牌": {
         "recognition": {
             "type": "TemplateMatch",
@@ -51,6 +122,7 @@
             }
         },
         "next": [
+            "[JumpBack]通用-战中-可发动EGO",
             "通用-战中-寻找怪物位置",
             "[JumpBack]空任务"
         ]
