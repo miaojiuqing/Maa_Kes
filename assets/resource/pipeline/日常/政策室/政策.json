@@ -105,6 +105,40 @@
             "[JumpBack]日常-政策-角色夸赞"
         ]
     },
+    "日常-政策-角色崩溃中": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    823,
+                    411,
+                    96,
+                    93
+                ],
+                "template": [
+                    "日常/政策审阅/角色崩溃中.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前角色精神已深度创伤,将前往疗愈中心恢复"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    863,
+                    445,
+                    251,
+                    24
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-已进入疗愈中心",
+            "[JumpBack]疗愈中心-它处弹窗-点击前往疗愈中心"
+        ]
+    },
     "日常-政策-点击进入审批": {
         "recognition": {
             "type": "TemplateMatch",

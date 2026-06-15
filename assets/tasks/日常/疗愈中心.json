@@ -1,0 +1,53 @@
+{
+    "task": [
+        {
+            "name": "日常-疗愈中心",
+            "label": "❤️‍🩹疗愈中心",
+            "default_check": false,
+            "group": [
+                "日常"
+            ],
+            "entry": "疗愈中心-任务开始层",
+            "description": "该任务会在\"政策审阅\"与\"共度时光\"中触发",
+            "option": [
+                "疗愈中心-治疗方案选择"
+            ]
+        }
+    ],
+    "option": {
+        "疗愈中心-治疗方案选择": {
+            "label": "治疗方案",
+            "type": "select",
+            "default_case": "疗愈中心-不处理",
+            "cases": [
+                {
+                    "name": "疗愈中心-记忆消除",
+                    "label": "记忆消除",
+                    "pipeline_override": {
+                        "疗愈中心-记忆消除": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "疗愈中心-咨询",
+                    "label": "咨询",
+                    "pipeline_override": {
+                        "疗愈中心-咨询": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "疗愈中心-不处理",
+                    "label": "不处理",
+                    "pipeline_override": {
+                        "疗愈中心-等待处理": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

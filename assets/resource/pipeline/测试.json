@@ -1,26 +1,17 @@
 {
     "1识别测试": {
         "recognition": {
-            "type": "ColorMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    66,
-                    497,
-                    32,
-                    167
+                    346,
+                    316,
+                    78,
+                    82
                 ],
-                "upper": [
-                    198,
-                    254,
-                    255
-                ],
-                "lower": [
-                    189,
-                    245,
-                    254
-                ],
-                "connected": true,
-                "count": 100
+                "template": [
+                    "日常/疗愈中心/有病人.png"
+                ]
             }
         },
         "next": [
@@ -34,9 +25,9 @@
                 "roi": "1识别测试",
                 "roi_offset": [
                     15,
-                    0,
-                    45,
-                    20
+                    -180,
+                    245,
+                    140
                 ],
                 "expected": [
                     "1",

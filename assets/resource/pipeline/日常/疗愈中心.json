@@ -1,0 +1,473 @@
+{
+    "疗愈中心-它处弹窗-点击前往疗愈中心": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    823,
+                    411,
+                    96,
+                    93
+                ],
+                "template": [
+                    "日常/政策审阅/角色崩溃中.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    863,
+                    445,
+                    251,
+                    24
+                ]
+            }
+        }
+    },
+    "疗愈中心-任务开始层": {
+        "next": [
+            "疗愈中心-总任务层",
+            "疗愈中心-已进入方舟城市",
+            "疗愈中心-已进入创伤中心",
+            "疗愈中心-已进入疗愈中心",
+            "[JumpBack]进游戏-任务开始层"
+        ]
+    },
+    "疗愈中心-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-已进入方舟城市",
+            "[JumpBack]首页点击-方舟城市",
+            "[JumpBack]通用-诺诺对话"
+        ]
+    },
+    "疗愈中心-已进入方舟城市": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    665,
+                    576,
+                    91,
+                    88
+                ],
+                "template": [
+                    "日常/疗愈中心/进城了.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "疗愈中心-已进入创伤中心",
+            "疗愈中心-已进入方舟城市"
+        ]
+    },
+    "疗愈中心-已进入创伤中心": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1019,
+                    433,
+                    126,
+                    121
+                ],
+                "template": [
+                    "日常/疗愈中心/已进入创伤中心.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    927,
+                    512,
+                    170,
+                    36
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-已进入疗愈中心",
+            "[JumpBack]疗愈中心-已进入创伤中心"
+        ]
+    },
+    "疗愈中心-已进入疗愈中心": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    17,
+                    624,
+                    83,
+                    85
+                ],
+                "template": [
+                    "日常/疗愈中心/已进入疗愈中心.png"
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-有病人",
+            "疗愈中心-没病人"
+        ]
+    },
+    "疗愈中心-有病人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    346,
+                    316,
+                    78,
+                    82
+                ],
+                "template": [
+                    "日常/疗愈中心/有病人.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "有病人!准备接受治疗❤️‍🩹"
+        },
+        "pre_delay": 200,
+        "post_delay": 400,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    15,
+                    -180,
+                    245,
+                    140
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-等待处理",
+            "疗愈中心-已选中病人",
+            "疗愈中心-有病人"
+        ]
+    },
+    "疗愈中心-没病人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    620,
+                    275,
+                    233,
+                    201
+                ],
+                "template": [
+                    "日常/疗愈中心/没病人.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "没病人了"
+        },
+        "next": [ //百花齐放
+            "已进入首页",
+            "[JumpBack]通用-回首页",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "疗愈中心-已选中病人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    647,
+                    134,
+                    78,
+                    76
+                ],
+                "template": [
+                    "日常/疗愈中心/已选中病人.png"
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-咨询",
+            "疗愈中心-记忆消除"
+        ]
+    },
+    "疗愈中心-等待处理": {
+        "enabled": false,
+        "focus": {
+            "Node.Recognition.Succeeded": "疗愈中心病人状况等待用户处理..."
+        },
+        "next": [ //百花齐放
+            "已进入首页",
+            "[JumpBack]通用-回首页",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    "疗愈中心-记忆消除": {
+        "enabled": false,
+        //考虑增加检查单元币是否充足的节点
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    607,
+                    625,
+                    82,
+                    84
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/记忆消除.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "执行清除记忆🍂"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    648,
+                    656,
+                    264,
+                    22
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-记忆消除确认",
+            "疗愈中心-记忆消除"
+        ]
+    },
+    "疗愈中心-记忆消除确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    489,
+                    327,
+                    109,
+                    69
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/记忆消除确认.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "记忆清除确认🍂"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    690,
+                    491,
+                    316,
+                    35
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "post_delay": 800,
+        "next": [
+            "疗愈中心-记忆消除确认",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]工具-自动推图-点击自动播放",
+            "疗愈中心-已进入疗愈中心"
+        ]
+    },
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    "疗愈中心-咨询": {
+        "enabled": false,
+        //考虑增加检查旅行卷是否充足的节点
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    935,
+                    624,
+                    83,
+                    86
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/咨询.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "执行咨询🚑"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    969,
+                    656,
+                    263,
+                    26
+                ]
+            }
+        },
+        "next": [
+            "疗愈中心-咨询确认",
+            "疗愈中心-咨询"
+        ]
+    },
+    "疗愈中心-咨询确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    465,
+                    283,
+                    136,
+                    69
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/咨询确认.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "心理咨询确认🏥"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    680,
+                    443,
+                    337,
+                    25
+                ]
+            }
+        },
+        "pre_delay": 300,
+        "post_delay": 800,
+        "next": [
+            "疗愈中心-咨询确认",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]疗愈中心-回答",
+            "[JumpBack]工具-自动推图-点击自动播放",
+            "疗愈中心-咨询-抉择"
+        ]
+    },
+    "疗愈中心-咨询-抉择": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    584,
+                    614,
+                    100,
+                    75
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/治疗方式.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                //左
+                "target": [
+                    232,
+                    296,
+                    125,
+                    81
+                ]
+                //右
+                // "target": [232, 296, 125, 81]
+            }
+        },
+        "next": [
+            "[JumpBack]工具-自动推图-点击自动播放",
+            "疗愈中心-咨询-抉择",
+            "疗愈中心-咨询-批准出院",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "疗愈中心-咨询-批准出院": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    368,
+                    301,
+                    80,
+                    80
+                ],
+                "template": [
+                    "日常/疗愈中心/治疗方案/批准出院.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "批准出院🏥"
+        },
+        "pre_delay": 200,
+        "post_delay": 1000,
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "target": [
+                    917,
+                    582,
+                    149,
+                    69
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "疗愈中心-咨询-批准出院",
+            "疗愈中心-已进入疗愈中心"
+        ]
+    },
+    "疗愈中心-回答": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    224,
+                    180,
+                    912,
+                    236
+                ],
+                "upper": [
+                    15,
+                    16,
+                    14
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "connected": true,
+                "count": 20000
+            }
+        },
+        "action": "Click"
+    }
+}
