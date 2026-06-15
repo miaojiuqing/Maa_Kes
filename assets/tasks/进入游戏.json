@@ -15,17 +15,22 @@
                 }
             },
             "option": [
-                "模拟器自启动游戏"
+                "模拟器自启动游戏_简中",
+                "模拟器自启动游戏_繁中"
             ]
         }
     ],
     "option": {
-        "模拟器自启动游戏": {
+        "模拟器自启动游戏_简中": {
+            "label": "模拟器自启动游戏",
             "type": "switch",
             "controller": [
                 "安卓端"
             ],
-            "description": "目前仅支持国服,其他渠道需提供包名",
+            "resource": [
+                "简中"
+            ],
+            "description": "支持国服",
             "default_case": "No",
             "cases": [
                 {
@@ -34,6 +39,38 @@
                         "进游戏-任务开始层": {
                             "action": "StartApp",
                             "package": "com.tencent.czn"
+                        }
+                    },
+                    "option": []
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟器自启动游戏_繁中": {
+            "label": "模擬器自啟動遊戲",
+            "type": "switch",
+            "controller": [
+                "安卓端"
+            ],
+            "resource": [
+                "繁中"
+            ],
+            "description": "支持国际服",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "StartApp",
+                            "package": "com.smilegate.chaoszero.stove.google"
                         }
                     },
                     "option": []
