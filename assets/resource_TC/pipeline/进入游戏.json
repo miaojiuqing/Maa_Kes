@@ -1,0 +1,146 @@
+{
+    "已进入首页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        }
+    },
+    "已进入首页-结束任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "action": "StopTask"
+    },
+    "进游戏-息屏点击": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "进入游戏/息屏点击/初始.png",
+                    "进入游戏/息屏点击/修女.png",
+                    "进入游戏/息屏点击/凛.png",
+                    "进入游戏/息屏点击/凯隆.png",
+                    "进入游戏/息屏点击/千鹤.png",
+                    "进入游戏/息屏点击/卡利佩.png",
+                    "进入游戏/息屏点击/卢克.png",
+                    "进入游戏/息屏点击/天使.png",
+                    "进入游戏/息屏点击/维罗妮卡.png",
+                    "进入游戏/息屏点击/美菱.png",
+                    "进入游戏/息屏点击/莉妲.png",
+                    "进入游戏/息屏点击/蕾伊.png",
+                    "进入游戏/息屏点击/蕾欧娜.png",
+                    "进入游戏/息屏点击/赛琳娜.png",
+                    "进入游戏/息屏点击/雨果.png",
+                    "进入游戏/息屏点击/麦格纳.png",
+                    "进入游戏/息屏点击/黛安娜.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    355,
+                    215,
+                    556,
+                    309
+                ]
+            }
+        }
+    },
+    "进游戏-任务开始层": {
+        "next": [
+            "[JumpBack]进游戏-点击领取签到奖励",
+            "[JumpBack]通用-点击屏幕",
+            "进游戏-已进入首页",
+            "[JumpBack]通用-回首页",
+            "[JumpBack]通用-点击叉叉",
+            "[JumpBack]进游戏-点击进入游戏",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]进游戏-息屏点击"
+        ]
+    },
+    "进游戏-已进入首页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        }
+    },
+    "进游戏-点击进入游戏": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1179,
+                    6,
+                    101,
+                    103
+                ],
+                "template": [
+                    "进入游戏/点击进游戏.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    360,
+                    513,
+                    526,
+                    158
+                ]
+            }
+        }
+    },
+    "进游戏-点击领取签到奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    481,
+                    377,
+                    670,
+                    290
+                ],
+                "template": [
+                    "进入游戏/签到奖励.png"
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}
