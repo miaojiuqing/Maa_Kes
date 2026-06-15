@@ -16,7 +16,7 @@
             "description": "你知道吗,其实政策点是神话级道具",
             "pipeline_override": {
                 "疗愈中心-没病人": {
-                    "next": [ //百花齐放
+                    "next": [
                         "日常-政策-总任务层",
                         "[JumpBack]通用-回首页",
                         "[JumpBack]黑屏计数"
