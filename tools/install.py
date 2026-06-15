@@ -106,6 +106,11 @@ def install_resource():
         install_path / "resource",
         dirs_exist_ok=True,
     )
+    shutil.copytree(
+        working_dir / "assets" / "resource_TC",
+        install_path / "resource_TC",
+        dirs_exist_ok=True,
+    )
     shutil.copy2(
         working_dir / "assets" / "interface.json",
         install_path,

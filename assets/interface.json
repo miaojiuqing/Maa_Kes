@@ -35,14 +35,14 @@
             "path": [
                 "./resource"
             ]
+        },
+        {
+            "name": "繁中",
+            "path": [
+                "./resource",
+                "./resource_TC"
+            ]
         }
-        // {
-        //     "name": "B 服",
-        //     "path": [
-        //         "./resource"
-        //         // "./resource_bilibili"
-        //     ]
-        // }
     ],
     // 可选的 agent 示例
     // "agent": {
