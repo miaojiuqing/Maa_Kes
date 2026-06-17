@@ -36,29 +36,59 @@
         ]
     },
     "通用-战中-可发动EGO": {
-        "recognition": {
-            "type": "ColorMatch",
-            "param": {
-                "roi": [
-                    66,
-                    497,
-                    32,
-                    167
-                ],
-                "upper": [
-                    198,
-                    254,
-                    255
-                ],
-                "lower": [
-                    189,
-                    245,
-                    254
-                ],
-                "connected": true,
-                "count": 100
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": {
+                    "type": "ColorMatch",
+                    "param": {
+                        "roi": [
+                            66,
+                            497,
+                            32,
+                            167
+                        ],
+                        "upper": [
+                            198,
+                            254,
+                            255
+                        ],
+                        "lower": [
+                            189,
+                            245,
+                            254
+                        ],
+                        "connected": true,
+                        "count": 100
+                    }
+                }
             }
-        },
+            // {
+            //     "recognition": {
+            //         "type": "ColorMatch",
+            //         "param": {
+            //             "roi": [
+            //                 66,
+            //                 497,
+            //                 32,
+            //                 167
+            //             ],
+            //             "upper": [
+            //                 247,
+            //                 255,
+            //                 208
+            //             ],
+            //             "lower": [
+            //                 132,
+            //                 180,
+            //                 135
+            //             ],
+            //             "connected": true,
+            //             "count": 100
+            //         }
+            //     }
+            // }
+        ],
         "focus": {
             "Node.Recognition.Succeeded": "检查有可发动的EGO技能"
         },

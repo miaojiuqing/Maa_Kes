@@ -19,7 +19,7 @@
     "option": {
         "自动战斗-自动释放EGO技能": {
             "label": "自动释放EGO",
-            "description": "只要EGO亮着就会放",
+            "description": "只要EGO亮着就会放\n\n冒绿光的那种不放,分辨不出谁能放谁放不了",
             "type": "switch",
             "default_case": "Yes",
             "cases": [
