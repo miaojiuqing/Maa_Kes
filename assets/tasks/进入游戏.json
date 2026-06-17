@@ -1,0 +1,52 @@
+{
+    "task": [
+        {
+            "name": "进入游戏",
+            "label": "🎮进入游戏",
+            "default_check": true,
+            "group": [
+                "日常"
+            ],
+            "entry": "进游戏-任务开始层",
+            "description": "暂不支持国服之外的模拟器游戏自启动,若有需要麻烦提供包名",
+            "pipeline_override": {
+                "进游戏-点击进入游戏": {
+                    "enabled": true
+                }
+            },
+            "option": [
+                "模拟器自启动游戏"
+            ]
+        }
+    ],
+    "option": {
+        "模拟器自启动游戏": {
+            "type": "switch",
+            "controller": [
+                "安卓端"
+            ],
+            "description": "目前仅支持国服,其他渠道需提供包名",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "StartApp",
+                            "package": "com.tencent.czn"
+                        }
+                    },
+                    "option": []
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
