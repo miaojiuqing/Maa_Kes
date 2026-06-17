@@ -21,18 +21,76 @@
             "工具-自动推图-点击跳过按钮"
         ]
     },
-    "工具-自动推图-点击跳过按钮": {
+    "工具-自动推图-已进入故事讲述": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    976,
-                    0,
-                    92,
+                    548,
+                    87,
+                    80,
                     88
                 ],
                 "template": [
-                    "单线程工具/剧情跳过/跳过按钮.png"
+                    "单线程工具/自动推图/特殊剧情/正在讲故事.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "听故事ing"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    707,
+                    401,
+                    344,
+                    160
+                ]
+            }
+        },
+        "next": [
+            "工具-自动推图-点击跳过按钮"
+        ]
+    },
+    "工具-自动推图-点击跳过按钮": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "TemplateMatch",
+                            "param": {
+                                "roi": [
+                                    976,
+                                    0,
+                                    92,
+                                    88
+                                ],
+                                "template": [
+                                    "单线程工具/剧情跳过/跳过按钮.png"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "TemplateMatch",
+                            "param": {
+                                "roi": [
+                                    671,
+                                    621,
+                                    86,
+                                    83
+                                ],
+                                "template": [
+                                    "单线程工具/自动推图/特殊剧情/完成.png"
+                                ]
+                            }
+                        }
+                    }
                 ]
             }
         },
