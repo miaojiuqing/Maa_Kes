@@ -1,0 +1,418 @@
+{
+    "肉鸽-刷开局卡-任务开始层": {
+        "next": [
+            "肉鸽-刷开局卡-已进入配置队伍界面"
+        ]
+    },
+    "肉鸽-刷开局卡-总任务层": {},
+    "肉鸽-刷开局卡-已进入配置队伍界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    14,
+                    592,
+                    125,
+                    122
+                ],
+                "template": [
+                    "通用/战斗类/已进入编队界面.png"
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-刷开局卡-已成功入侵卡厄思",
+            "[JumpBack]肉鸽-通用-点击入侵卡厄思",
+            "[JumpBack]肉鸽-通用-噩梦模式提醒",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "肉鸽-刷开局卡-已成功入侵卡厄思": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    841,
+                    0,
+                    72,
+                    89
+                ],
+                "template": [
+                    "肉鸽类/通用/开局前/卡厄思入侵完毕.png"
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-刷开局卡-言语呈现",
+            "[JumpBack]工具-剧情跳过-点击自动播放",
+            "肉鸽-刷开局卡-已成功入侵卡厄思"
+        ]
+    },
+    "肉鸽-刷开局卡-言语呈现": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    645,
+                    1280,
+                    75
+                ],
+                "template": [
+                    "肉鸽类/通用/开局前/言语呈现.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "言语已呈现,一秒后检查是否成功刷到\"铭记教诲\""
+        },
+        "post_delay": 1000,
+        "next": [
+            "肉鸽-刷开局卡-刷到对应言语",
+            "肉鸽-刷开局卡-未刷到对应言语-第一次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-刷到对应言语": { //铭记教诲
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    68,
+                    468,
+                    1064,
+                    195
+                ],
+                "template": [
+                    "肉鸽类/刷开局/言语/铭记教诲.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "刷到正确的言语了！"
+        },
+        "repeat": 2,
+        "repeat_delay": 150,
+        "action": "Click",
+        "next": [
+            "肉鸽-刷开局卡-已进入卡牌选择界面",
+            "肉鸽-刷开局卡-刷到对应言语",
+            "[JumpBack]工具-剧情跳过-有人说话_右下角"
+        ]
+    },
+    "肉鸽-刷开局卡-已进入卡牌选择界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    627,
+                    74,
+                    85
+                ],
+                "template": [
+                    "肉鸽类/刷开局/卡牌选择界面.png"
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "肉鸽-刷开局卡-刷到所需卡牌",
+            "肉鸽-刷开局卡-未刷到所需卡牌-第一次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-刷到所需卡牌": { //分流
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    188,
+                    175,
+                    921,
+                    450
+                ],
+                "template": [
+                    "肉鸽类/刷开局/中立卡/梦之边境.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已刷到所需卡牌🎉\n\n任务将停止"
+        }
+    },
+    "肉鸽-刷开局卡-未刷到所需卡牌-第一次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    188,
+                    175,
+                    921,
+                    450
+                ],
+                "template": [
+                    "肉鸽类/刷开局/中立卡/梦之边境.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到所需卡牌,第一次检查"
+        },
+        "next": [
+            "肉鸽-刷开局卡-刷到所需卡牌",
+            "肉鸽-刷开局卡-未刷到所需卡牌-第二次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-未刷到所需卡牌-第二次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    188,
+                    175,
+                    921,
+                    450
+                ],
+                "template": [
+                    "肉鸽类/刷开局/中立卡/梦之边境.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到所需卡牌,第二次检查"
+        },
+        "next": [
+            "肉鸽-刷开局卡-刷到所需卡牌",
+            "肉鸽-刷开局卡-未刷到所需卡牌-第三次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-未刷到所需卡牌-第三次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    188,
+                    175,
+                    921,
+                    450
+                ],
+                "template": [
+                    "肉鸽类/刷开局/中立卡/梦之边境.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到所需卡牌,第三次检查未果,将重开"
+        },
+        "post_delay": 800,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1211,
+                    22,
+                    35,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-刷开局卡-已进入准备逃脱界面",
+            "肉鸽-刷开局卡-未刷到所需卡牌-第三次检查",
+            "肉鸽-刷开局卡-未刷到对应言语-第三次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-未刷到对应言语-第一次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    136,
+                    554,
+                    997,
+                    119
+                ],
+                "template": [
+                    "肉鸽类/刷开局/言语/铭记教诲.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到正确的言语,第一次检查"
+        },
+        "post_delay": 800,
+        "next": [
+            "肉鸽-刷开局卡-刷到对应言语",
+            "肉鸽-刷开局卡-未刷到对应言语-第二次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-未刷到对应言语-第二次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    136,
+                    554,
+                    997,
+                    119
+                ],
+                "template": [
+                    "肉鸽类/刷开局/言语/铭记教诲.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到正确的言语,第二次检查"
+        },
+        "post_delay": 800,
+        "next": [
+            "肉鸽-刷开局卡-刷到对应言语",
+            "肉鸽-刷开局卡-未刷到对应言语-第三次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-未刷到对应言语-第三次检查": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    136,
+                    554,
+                    997,
+                    119
+                ],
+                "template": [
+                    "肉鸽类/刷开局/言语/铭记教诲.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "未找到正确的言语,第三次检查未果,将重开"
+        },
+        "post_delay": 800,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1211,
+                    22,
+                    35,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-刷开局卡-已进入准备逃脱界面",
+            "肉鸽-刷开局卡-未刷到对应言语-第三次检查"
+        ]
+    },
+    "肉鸽-刷开局卡-已进入准备逃脱界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1008,
+                    624,
+                    86,
+                    90
+                ],
+                "template": [
+                    "肉鸽类/通用/逃脱.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    5,
+                    0,
+                    180,
+                    5
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "肉鸽-刷开局卡-逃脱确认",
+            "肉鸽-刷开局卡-已进入准备逃脱界面"
+        ]
+    },
+    "肉鸽-刷开局卡-逃脱确认": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    0,
+                    191,
+                    1280,
+                    337
+                ],
+                "lower": [
+                    22,
+                    22,
+                    22
+                ],
+                "upper": [
+                    22,
+                    22,
+                    22
+                ],
+                "connected": true,
+                "count": 200000
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "确认逃脱"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    677,
+                    437,
+                    342,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-刷开局卡-已进入配置队伍界面",
+            "[JumpBack]肉鸽-刷开局卡-活动卡厄思进入",
+            "肉鸽-刷开局卡-逃脱确认",
+            "[JumpBack]黑屏计数"
+        ]
+    },
+    "肉鸽-刷开局卡-活动卡厄思进入": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    863,
+                    599,
+                    260,
+                    94
+                ],
+                "template": [
+                    "肉鸽类/刷开局/活动卡厄思进入按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    896,
+                    632,
+                    335,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000
+    }
+}

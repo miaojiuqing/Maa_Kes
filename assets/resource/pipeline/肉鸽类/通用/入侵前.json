@@ -1,0 +1,122 @@
+{
+    "肉鸽-通用-点击入侵卡厄思": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1056,
+                    616,
+                    84,
+                    84
+                ],
+                "template": [
+                    "肉鸽类/通用/开局前/队伍配置处点击入侵卡厄思.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    5,
+                    0,
+                    120,
+                    5
+                ]
+            }
+        }
+    },
+    "肉鸽-通用-噩梦模式提醒": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    93
+                ],
+                "template": [
+                    "肉鸽类/通用/开局前/噩梦提醒.png"
+                ]
+            }
+        },
+        "next": [
+            "肉鸽-通用-噩梦模式提醒-已选中不再提醒",
+            "[JumpBack]肉鸽-通用-噩梦模式提醒-未选中不再提醒"
+        ]
+    },
+    "肉鸽-通用-噩梦模式提醒-未选中不再提醒": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    758,
+                    633,
+                    59,
+                    64
+                ],
+                "upper": [
+                    195,
+                    195,
+                    195
+                ],
+                "lower": [
+                    195,
+                    195,
+                    195
+                ],
+                "count": 250
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    781,
+                    652,
+                    195,
+                    20
+                ]
+            }
+        },
+        "post_delay": 500
+    },
+    "肉鸽-通用-噩梦模式提醒-已选中不再提醒": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    758,
+                    633,
+                    59,
+                    64
+                ],
+                "upper": [
+                    242,
+                    142,
+                    86
+                ],
+                "lower": [
+                    200,
+                    120,
+                    40
+                ],
+                "count": 250
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1029,
+                    643,
+                    210,
+                    34
+                ]
+            }
+        },
+        "pre_delay": 250,
+        "post_delay": 500
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "task": [
+        {
+            "name": "肉鸽-指定刷开局卡牌",
+            "label": "刷开局中立卡",
+            "default_check": false,
+            "group": [
+                "工具"
+            ],
+            "entry": "肉鸽-刷开局卡-任务开始层",
+            "option": [
+                "肉鸽-刷开局中立卡-卡牌选择"
+            ],
+            "description": "需要在此界面启动：<br/>![启动界面](./resource/base/image/图标/任务描述/刷梦边.png)<br/>刷到指定卡就停"
+        }
+    ],
+    "option": {
+        "肉鸽-刷开局中立卡-卡牌选择": {
+            "label": "卡牌选择",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "肉鸽-刷开局中立卡-梦之边境",
+                    "label": "梦之边境",
+                    "description": "[安息]\n\n伤害300%\n\n被丢弃时,随机丢弃\n\n抽堆中的2张卡牌"
+                }
+            ]
+        }
+    }
+}
