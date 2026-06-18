@@ -80,6 +80,7 @@
         "tasks/工具/读消息.json",
         "tasks/工具/教学红点清除.json",
         "tasks/工具/卡厄思刷开局.json",
+        "tasks/工具/交互辅助.json",
         "tasks/工具/自动战斗.json"
     ],
     "option": {

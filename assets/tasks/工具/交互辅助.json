@@ -1,0 +1,42 @@
+{
+    "task": [
+        {
+            "name": "交互辅助",
+            "default_check": false,
+            "group": [
+                "工具"
+            ],
+            "entry": "工具-交互辅助-任务开始层",
+            "description": "自行监测并点击所所选按键",
+            "option": [
+                "工具-交互辅助-继续挑战"
+            ]
+        }
+    ],
+    "option": {
+        "工具-交互辅助-继续挑战": {
+            "label": "继续挑战",
+            "type": "switch",
+            "icon": "./resource/image/单线程工具/自动推图/再战.png",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "工具-交互辅助-点击继续挑战": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "工具-交互辅助-点击继续挑战": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "工具-交互辅助-任务开始层": {
+        "next": [
+            "[JumpBack]工具-交互辅助-点击继续挑战",
+            "[JumpBack]空任务"
+        ]
+    },
+    "工具-交互辅助-点击继续挑战": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    720,
+                    623,
+                    81,
+                    80
+                ],
+                "template": [
+                    "单线程工具/自动推图/再战.png"
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}
