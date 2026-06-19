@@ -1,0 +1,42 @@
+name: mirrorchyan_uploading
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "OCR"
+
+jobs:
+  mirrorchyan:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version Name
+        id: version_name
+        run: |
+          version=$(git log --pretty=format:"%ad" --date=iso -1)
+          release_note=$(git log --pretty=format:"%ad %h %s" --date=iso -1)
+
+          echo "version=$version" | tee -a "$GITHUB_OUTPUT"
+          echo "release_note=$release_note" | tee -a "$GITHUB_OUTPUT"
+
+      - uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: local
+          mirrorchyan_rid: MaaCommonAssets
+          pick_files: '["OCR"]'
+          version_name: ${{ steps.version_name.outputs.version }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+
+      - uses: MirrorChyan/release-note-action@v1
+        with:
+          mirrorchyan_rid: MaaCommonAssets
+
+          version_name: ${{ steps.version_name.outputs.version }}
+          release_note: ${{ steps.version_name.outputs.release_note }}
+
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
