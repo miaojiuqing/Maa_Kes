@@ -1,7 +1,7 @@
 {
     "interface_version": 2,
     "name": "Maa_Kes",
-    "description": "PC端请管理员方式启动",
+    "description": "模拟器需设置16:9分辨率,PC端需游戏窗口设置为16:9且以管理员方式启动该软件",
     "contact": "QQ群: 437587416",
     "license": "MIT",
     "welcome": "维若妮卡已就位！",
