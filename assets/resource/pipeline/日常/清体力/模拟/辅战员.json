@@ -112,7 +112,8 @@
                 "end_hold": 500
             }
         },
-        "post_delay": 1000
+        "post_delay": 1000,
+        "pre_wait_freezes": 500
     },
     "清体力-辅战员-已进入编队界面": {
         "recognition": {
