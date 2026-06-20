@@ -68,9 +68,9 @@
             "type": "select",
             "cases": [
                 {
-                    "name": "肉鸽-刷开局神谕-选择痛苦",
-                    "label": "选择痛苦",
-                    "description": "生命值减少30%\n\n移除所选2张卡牌"
+                    "name": "肉鸽-刷开局神谕-移除两张",
+                    "label": "移除两张",
+                    "description": "检测的是\"2弓\""
                 }
             ]
         }

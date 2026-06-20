@@ -9,14 +9,14 @@
                     1280,
                     75
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
                     "肉鸽类/通用/开局前/言语呈现.png"
                 ]
             }
         },
         "focus": {
-            "Node.Recognition.Succeeded": "言语已呈现,一秒后检查是否成功刷到\"选择痛苦\""
+            "Node.Recognition.Succeeded": "言语已呈现,一秒后检查是否成功刷到\"2张\""
         },
         "post_delay": 1000,
         "next": [
@@ -34,9 +34,9 @@
                     1064,
                     195
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
-                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                    "肉鸽类/刷开局/言语/2张.png"
                 ]
             }
         },
@@ -63,9 +63,9 @@
                     1064,
                     195
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
-                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                    "肉鸽类/刷开局/言语/2张.png"
                 ]
             }
         },
@@ -84,9 +84,9 @@
                     997,
                     119
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
-                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                    "肉鸽类/刷开局/言语/2张.png"
                 ]
             }
         },
@@ -110,9 +110,9 @@
                     997,
                     119
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
-                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                    "肉鸽类/刷开局/言语/2张.png"
                 ]
             }
         },
@@ -136,9 +136,9 @@
                     997,
                     119
                 ],
-                "threshold": 0.85,
+                "threshold": 0.93,
                 "template": [
-                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                    "肉鸽类/刷开局/言语/2张.png"
                 ]
             }
         },
