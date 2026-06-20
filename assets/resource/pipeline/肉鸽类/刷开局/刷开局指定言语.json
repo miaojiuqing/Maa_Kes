@@ -24,7 +24,7 @@
             "肉鸽-刷开局神谕-未刷到对应言语-第一次检查"
         ]
     },
-    "肉鸽-刷开局神谕-刷到对应言语": { //献上一切
+    "肉鸽-刷开局神谕-刷到对应言语": { //忍受痛苦
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -41,15 +41,37 @@
             }
         },
         "focus": {
-            "Node.Recognition.Succeeded": "刷到正确的言语了！"
+            "Node.Recognition.Succeeded": "已刷到制定神谕！"
         },
         "repeat": 2,
         "repeat_delay": 150,
         "action": "Click",
         "next": [
             "肉鸽-刷开局神谕-刷到对应言语",
-            "[JumpBack]工具-剧情跳过-有人说话_右下角"
+            "[JumpBack]工具-剧情跳过-有人说话_右下角",
+            "肉鸽-刷开局神谕-刷到对应言语-已离开神谕检查"
         ]
+    },
+    "肉鸽-刷开局神谕-刷到对应言语-已离开神谕检查": { //忍受痛苦
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    68,
+                    468,
+                    1064,
+                    195
+                ],
+                "threshold": 0.85,
+                "template": [
+                    "肉鸽类/刷开局/言语/选择痛苦.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已进入神谕界面，结束任务"
+        }
     },
     "肉鸽-刷开局神谕-未刷到对应言语-第一次检查": {
         "inverse": true,
