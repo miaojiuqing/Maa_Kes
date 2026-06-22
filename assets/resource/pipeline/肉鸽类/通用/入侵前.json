@@ -43,8 +43,41 @@
         },
         "next": [
             "肉鸽-通用-噩梦模式提醒-已选中不再提醒",
-            "[JumpBack]肉鸽-通用-噩梦模式提醒-未选中不再提醒"
+            "[JumpBack]肉鸽-通用-噩梦模式提醒-未选中不再提醒",
+            "肉鸽-通用-噩梦提示-不疗愈直接跳"
         ]
+    },
+    "肉鸽-通用-噩梦提示-不疗愈直接跳": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    152,
+                    612,
+                    117,
+                    93
+                ],
+                "template": [
+                    "肉鸽类/通用/开局前/噩梦不疗愈.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "你这家伙,连给干员疗愈都不愿意吗"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1030,
+                    642,
+                    206,
+                    35
+                ]
+            }
+        },
+        "pre_delay": 500,
+        "post_delay": 500
     },
     "肉鸽-通用-噩梦模式提醒-未选中不再提醒": {
         "recognition": {
