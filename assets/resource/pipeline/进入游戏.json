@@ -120,11 +120,12 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    1179,
-                    6,
-                    101,
-                    103
+                    444,
+                    204,
+                    243,
+                    316
                 ],
+                "green_mask": true,
                 "template": [
                     "进入游戏/点击进游戏.png"
                 ]
