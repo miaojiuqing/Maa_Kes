@@ -53,6 +53,7 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                "order_by": "Score",
                 "roi": [
                     771,
                     60,
