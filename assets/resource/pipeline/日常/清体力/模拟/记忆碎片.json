@@ -59,9 +59,6 @@
                     260,
                     670
                 ],
-                "threshold": [
-                    0.8
-                ],
                 "green_mask": true,
                 "template": [
                     "日常/清体力/记忆碎片/序曲与梦境.png"
