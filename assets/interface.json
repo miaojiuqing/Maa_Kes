@@ -73,7 +73,7 @@
         "tasks/日常/出击.json",
         "tasks/日常/奖励领取.json",
         //肉鸽类
-        // "tasks/肉鸽类/自动肉鸽.json",
+        "tasks/肉鸽/卡厄思推图.json",
         "tasks/肉鸽/卡厄思刷开局.json",
         //单独运行工具
         "tasks/工具/自动推图.json",
