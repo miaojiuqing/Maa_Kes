@@ -1,0 +1,68 @@
+{
+    "卡厄思-通用-装备重铸-点跳过": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    39,
+                    198,
+                    138,
+                    396
+                ],
+                "template": [
+                    "肉鸽类/通用/装备获取/重铸/已进入重铸界面.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "进入装备重铸界面,将直接跳过"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    816,
+                    652,
+                    169,
+                    35
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "卡厄思-通用-装备重铸-跳过确认",
+            "卡厄思-通用-装备重铸-点跳过"
+        ]
+    },
+    "卡厄思-通用-装备重铸-跳过确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    624,
+                    402,
+                    117,
+                    106
+                ],
+                "template": [
+                    "肉鸽类/通用/装备获取/重铸/跳过确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    677,
+                    436,
+                    338,
+                    35
+                ]
+            }
+        },
+        "next": [
+            "卡厄思-通用-已进入事件",
+            "卡厄思-通用-装备重铸-跳过确认"
+        ]
+    }
+}

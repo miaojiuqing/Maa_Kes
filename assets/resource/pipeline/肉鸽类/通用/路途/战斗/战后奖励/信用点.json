@@ -1,0 +1,37 @@
+{
+    "卡厄思-通用-战后奖励-信用点": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1141,
+                    102,
+                    101,
+                    519
+                ],
+                "template": [
+                    "肉鸽类/通用/道中选路/战斗/战后奖励/信用点.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "战利品 信用点!"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1044,
+                    642,
+                    180,
+                    34
+                ]
+            }
+        },
+        "next": [
+            "卡厄思-通用-战后奖励-信用点",
+            "卡厄思-通用-战斗结束",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    }
+}

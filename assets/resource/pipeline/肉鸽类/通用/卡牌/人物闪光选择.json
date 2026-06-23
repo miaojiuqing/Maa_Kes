@@ -1,0 +1,122 @@
+{
+    "卡厄思-通用-人物闪光触发": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    139,
+                    131,
+                    1019,
+                    103
+                ],
+                "template": [
+                    "肉鸽类/通用/卡牌/角色闪光/选择角色闪光_右.png",
+                    "肉鸽类/通用/卡牌/角色闪光/选择角色闪光_左.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已进入人物闪光选择界面"
+        },
+        "next": [
+            "卡厄思-通用-人物闪光触发-已选中",
+            "[JumpBack]卡厄思-通用-人物闪光触发-左框识别带点击",
+            "[JumpBack]卡厄思-通用-人物闪光触发-右框识别带点击"
+        ]
+    },
+    "卡厄思-通用-人物闪光触发-已选中": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    147,
+                    45,
+                    1031,
+                    145
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "lower": [
+                    255,
+                    244,
+                    87
+                ],
+                "count": 1400
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1031,
+                    654,
+                    216,
+                    34
+                ]
+            }
+        },
+        "next": [
+            "通用-点击屏幕",
+            "卡厄思-通用-人物闪光触发-已选中"
+        ]
+    },
+    "卡厄思-通用-人物闪光触发-左框识别带点击": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "order_by": "Random",
+                "roi": [
+                    139,
+                    131,
+                    1019,
+                    103
+                ],
+                "template": [
+                    "肉鸽类/通用/卡牌/角色闪光/选择角色闪光_左.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    50,
+                    50,
+                    150,
+                    250
+                ]
+            }
+        }
+    },
+    "卡厄思-通用-人物闪光触发-右框识别带点击": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    139,
+                    131,
+                    1019,
+                    103
+                ],
+                "template": [
+                    "肉鸽类/通用/卡牌/角色闪光/选择角色闪光_右.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -200,
+                    50,
+                    150,
+                    250
+                ]
+            }
+        }
+    }
+}

@@ -3,45 +3,39 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "order_by": "Score",
                 "roi": [
-                    781,
-                    110,
-                    471,
-                    607
+                    139,
+                    131,
+                    1019,
+                    103
                 ],
                 "template": [
-                    "日常/清体力/周本挑战/BOSS头像/哀嚎的浪子.png"
+                    "肉鸽类/通用/卡牌/角色闪光/选择角色闪光_左.png"
                 ]
             }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已进入命运选择界面"
         },
         "next": [
             "1位置测试"
         ]
     },
     "1位置测试": {
+        "focus": {
+            "Node.Recognition.Succeeded": ""
+        },
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": "1识别测试",
                 "roi_offset": [
-                    -200,
-                    1,
-                    130,
-                    20
+                    50,
+                    50,
+                    150,
+                    250
                 ],
-                "expected": [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
-                    "8",
-                    "9",
-                    "0"
-                ]
+                "expected": []
             }
         }
     },

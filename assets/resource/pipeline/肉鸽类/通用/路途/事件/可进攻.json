@@ -1,0 +1,54 @@
+{
+    "卡厄思-通用-事件-可以发起进攻": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1172,
+                    585,
+                    81,
+                    83
+                ],
+                "method": 10001,
+                "threshold": 0.85,
+                "template": [
+                    "肉鸽类/通用/道中选路/事件/发起进攻.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "卡厄思-通用-事件-可以发起进攻",
+            "[JumpBack]卡厄思-通用-事件-进攻确认",
+            "卡厄思-通用-已进入战斗"
+        ]
+    },
+    "卡厄思-通用-事件-进攻确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    507,
+                    552,
+                    76,
+                    77
+                ],
+                "template": [
+                    "肉鸽类/通用/道中选路/事件/进攻确认.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    532,
+                    580,
+                    221,
+                    22
+                ]
+            }
+        }
+    }
+}
