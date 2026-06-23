@@ -3,18 +3,18 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "threshold": [
-                    0.85
-                ],
                 "roi": [
-                    68,
-                    468,
-                    1064,
-                    195
+                    975,
+                    581,
+                    305,
+                    125
                 ],
+                "threshold": [
+                    0.8
+                ],
+                "green_mask": true,
                 "template": [
-                    "肉鸽类/刷开局/言语/献上一切.png",
-                    "肉鸽类/刷开局/言语/忍受痛苦.png"
+                    "日常/清体力/记忆碎片/遗骸与工具.png"
                 ]
             }
         },
@@ -28,10 +28,10 @@
             "param": {
                 "roi": "1识别测试",
                 "roi_offset": [
-                    5,
-                    10,
-                    180,
-                    80
+                    -200,
+                    1,
+                    130,
+                    20
                 ],
                 "expected": [
                     "1",

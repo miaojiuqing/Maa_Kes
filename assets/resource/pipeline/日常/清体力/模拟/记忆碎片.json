@@ -62,7 +62,7 @@
                 "order_by": "Score",
                 "green_mask": true,
                 "template": [
-                    "日常/清体力/记忆碎片/序曲与梦境.png"
+                    "日常/清体力/记忆碎片/遗骸与工具.png"
                 ]
             }
         },
@@ -70,16 +70,16 @@
             "type": "Click",
             "param": {
                 "target_offset": [
-                    -100,
-                    25,
-                    10,
-                    10
+                    -200,
+                    1,
+                    130,
+                    20
                 ]
             }
         }
     },
     "清体力-记忆碎片-刷取选择-找不到下面-滑动": {
-        "enabled": false,
+        // "enabled": false,
         "inverse": true,
         "recognition": {
             "type": "TemplateMatch",
