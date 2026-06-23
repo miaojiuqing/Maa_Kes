@@ -3,18 +3,15 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                "order_by": "Score",
                 "roi": [
-                    975,
-                    581,
-                    305,
-                    125
+                    781,
+                    110,
+                    471,
+                    607
                 ],
-                "threshold": [
-                    0.8
-                ],
-                "green_mask": true,
                 "template": [
-                    "日常/清体力/记忆碎片/遗骸与工具.png"
+                    "日常/清体力/周本挑战/BOSS头像/哀嚎的浪子.png"
                 ]
             }
         },
