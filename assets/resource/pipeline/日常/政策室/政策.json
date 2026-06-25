@@ -142,6 +142,7 @@
         ]
     },
     "日常-政策-点击进入审批": {
+        //点击进入盖章界面
         "recognition": {
             "type": "TemplateMatch",
             "param": {
