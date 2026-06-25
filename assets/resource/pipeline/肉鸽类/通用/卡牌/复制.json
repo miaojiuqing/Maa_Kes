@@ -1,0 +1,32 @@
+{
+    "卡厄思-通用-卡牌复制界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    11,
+                    0,
+                    89,
+                    98
+                ],
+                "template": [
+                    "肉鸽类/通用/卡牌/复制/卡牌复制.png"
+                ]
+            }
+        },
+        "action": {
+            //点跳过
+            "type": "Click",
+            "param": {
+                "target": [
+                    1031,
+                    653,
+                    207,
+                    33
+                ]
+            }
+        },
+        "pre_delay": 200,
+        "post_delay": 500
+    }
+}
