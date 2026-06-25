@@ -1,0 +1,138 @@
+{
+    "卡厄思-通用-结算界面": { //默认撤离
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    654,
+                    620,
+                    84,
+                    88
+                ],
+                "template": [
+                    "肉鸽类/通用/道中选路/存档点/临时返回.png"
+                ]
+            }
+        },
+        "next": [
+            "卡厄思-通用-存档点-撤离"
+        ]
+    },
+    "卡厄思-通用-存档点-撤离": {
+        "focus": {
+            "Node.Recognition.Succeeded": "将直接进行撤离"
+        },
+        "next": [
+            "卡厄思-通用-撤离确认",
+            "[JumpBack]卡厄思-通用-点击逃脱",
+            "[JumpBack]卡厄思-通用-结算界面-点击右上角三条杠"
+        ]
+    },
+    "卡厄思-通用-结算界面-点击临时返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    654,
+                    620,
+                    84,
+                    88
+                ],
+                "template": [
+                    "肉鸽类/通用/道中选路/存档点/临时返回.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    674,
+                    645,
+                    204,
+                    33
+                ]
+            }
+        },
+        "pre_delay": 200,
+        "post_delay": 500
+    },
+    "卡厄思-通用-结算界面-点击右上角三条杠": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    0,
+                    96,
+                    90
+                ],
+                "template": [
+                    "肉鸽类/通用/通用按钮/右上角三条杠.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "pre_delay": 200,
+        "post_delay": 500
+    },
+    "卡厄思-通用-点击逃脱": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1010,
+                    627,
+                    90,
+                    88
+                ],
+                "template": [
+                    "肉鸽类/通用/逃脱.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1034,
+                    649,
+                    202,
+                    36
+                ]
+            }
+        }
+    },
+    "卡厄思-通用-撤离确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    636,
+                    412,
+                    89,
+                    87
+                ],
+                "template": [
+                    "肉鸽类/通用/通用按钮/橙色白圆心.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    670,
+                    440,
+                    338,
+                    32
+                ]
+            }
+        },
+        "next": [
+            "卡厄思-通用-撤离确认"
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "卡厄思-通用-探险结果": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    986,
+                    620,
+                    82,
+                    85
+                ],
+                "template": [
+                    "肉鸽类/通用/通用按钮/紫底白箭头.png",
+                    "肉鸽类/通用/通用按钮/紫底白圆心.png"
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 150,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    50,
+                    0,
+                    1,
+                    1
+                ]
+            }
+        }
+    }
+}
