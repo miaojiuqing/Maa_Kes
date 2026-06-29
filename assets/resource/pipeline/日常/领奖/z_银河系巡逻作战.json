@@ -1,0 +1,134 @@
+{
+    "活动-市长走棋子-任务开始层": {
+        "next": [
+            "活动-市长走棋子-已进入活动页",
+            "活动-市长走棋子-总任务层",
+            "[JumpBack]进游戏-任务开始层"
+        ]
+    },
+    "活动-市长走棋子-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    124,
+                    101,
+                    182
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "活动-市长走棋子-已进入活动页",
+            "[JumpBack]首页点击-活动"
+        ]
+    },
+    "活动-市长走棋子-已进入活动页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    120,
+                    76,
+                    101,
+                    112
+                ],
+                "template": [
+                    "活动/银河系巡逻作战/已进入活动.png"
+                ]
+            }
+        },
+        "next": [
+            "领奖-补给-已进入补给奖励领取界面",
+            "[JumpBack]活动-市长走棋子-点击进入巡逻界面"
+        ]
+    },
+    "活动-市长走棋子-点击进入巡逻界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    77,
+                    26,
+                    186,
+                    694
+                ],
+                "template": [
+                    "活动/银河系巡逻作战/点击进入巡逻作战.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "活动-市长走棋子-已进入补给品领取界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1161,
+                    513,
+                    91,
+                    91
+                ],
+                "template": [
+                    "活动/银河系巡逻作战/已进入补给品领取界面.png"
+                ]
+            }
+        },
+        "next": [
+            "活动-市长走棋子-已领取完毕",
+            "活动-市长走棋子-可领取"
+        ]
+    },
+    "活动-市长走棋子-可领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1012,
+                    447,
+                    91,
+                    91
+                ],
+                "template": [
+                    "活动/银河系巡逻作战/可领取点击.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "[JumpBack]通用-点击屏幕",
+            "活动-市长走棋子-已领取完毕",
+            "活动-市长走棋子-已进入补给品领取界面"
+        ]
+    },
+    "活动-市长走棋子-已领取完毕": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1012,
+                    447,
+                    91,
+                    91
+                ],
+                "template": [
+                    "活动/银河系巡逻作战/可领取点击.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "今日走棋子骰子次数已领取完毕"
+        },
+        "next": [
+            "已进入首页",
+            "[JumpBack]通用-回首页",
+            "[JumpBack]通用-点击返回",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    }
+}

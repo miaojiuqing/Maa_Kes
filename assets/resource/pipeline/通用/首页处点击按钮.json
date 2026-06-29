@@ -52,5 +52,22 @@
             }
         },
         "action": "Click"
+    },
+    "首页点击-活动": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    950,
+                    0,
+                    80,
+                    85
+                ],
+                "template": [
+                    "通用/首页处按钮/活动.png"
+                ]
+            }
+        },
+        "action": "Click"
     }
 }
