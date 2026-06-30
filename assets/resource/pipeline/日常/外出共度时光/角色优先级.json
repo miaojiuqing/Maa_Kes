@@ -4,7 +4,190 @@
         "max_hit": 1,
         "next": [
             "日常-约会-角色优先级_1",
-            "[JumpBack]日常-约会-点击切换地区"
+            "日常-约会-角色优先级_1-点击切换地区_第一次"
+        ]
+    },
+    "日常-约会-角色优先级_1-点击切换地区_第一次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第一次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_1",
+            "日常-约会-角色优先级_1-点击切换地区_第二次"
+        ]
+    },
+    "日常-约会-角色优先级_1-点击切换地区_第二次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第二次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_1",
+            "日常-约会-角色优先级_1-点击切换地区_第三次"
+        ]
+    },
+    "日常-约会-角色优先级_1-点击切换地区_第三次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第三次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_1",
+            "日常-约会-角色优先级_1-点击切换地区_第四次"
+        ]
+    },
+    "日常-约会-角色优先级_1-点击切换地区_第四次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第四次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_1",
+            "日常-约会-角色优先级_1-点击切换地区_第五次"
+        ]
+    },
+    "日常-约会-角色优先级_1-点击切换地区_第五次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第五次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_1",
+            "日常-约会-角色优先级_1-五次都未找到对应角色"
+        ]
+    },
+    "日常-约会-角色优先级_1-五次都未找到对应角色": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试五次都未找到对应角色,将进行下一优先级的寻找"
+        },
+        "next": [
+            "日常-约会-已进入城内"
         ]
     },
     "日常-约会-角色优先级_1": {
@@ -108,7 +291,190 @@
         "max_hit": 1,
         "next": [
             "日常-约会-角色优先级_2",
-            "[JumpBack]日常-约会-点击切换地区"
+            "日常-约会-角色优先级_2-点击切换地区_第一次"
+        ]
+    },
+    "日常-约会-角色优先级_2-点击切换地区_第一次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第一次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_2",
+            "日常-约会-角色优先级_2-点击切换地区_第二次"
+        ]
+    },
+    "日常-约会-角色优先级_2-点击切换地区_第二次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第二次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_2",
+            "日常-约会-角色优先级_2-点击切换地区_第三次"
+        ]
+    },
+    "日常-约会-角色优先级_2-点击切换地区_第三次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第三次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_2",
+            "日常-约会-角色优先级_2-点击切换地区_第四次"
+        ]
+    },
+    "日常-约会-角色优先级_2-点击切换地区_第四次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第四次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_2",
+            "日常-约会-角色优先级_2-点击切换地区_第五次"
+        ]
+    },
+    "日常-约会-角色优先级_2-点击切换地区_第五次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第五次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_2",
+            "日常-约会-角色优先级_2-五次都未找到对应角色"
+        ]
+    },
+    "日常-约会-角色优先级_2-五次都未找到对应角色": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试五次都未找到对应角色,将进行下一优先级的寻找"
+        },
+        "next": [
+            "日常-约会-已进入城内"
         ]
     },
     "日常-约会-角色优先级_2": {
@@ -211,7 +577,190 @@
         "max_hit": 1,
         "next": [
             "日常-约会-角色优先级_3",
-            "[JumpBack]日常-约会-点击切换地区"
+            "日常-约会-角色优先级_3-点击切换地区_第一次"
+        ]
+    },
+    "日常-约会-角色优先级_3-点击切换地区_第一次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第一次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_3",
+            "日常-约会-角色优先级_3-点击切换地区_第二次"
+        ]
+    },
+    "日常-约会-角色优先级_3-点击切换地区_第二次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第二次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_3",
+            "日常-约会-角色优先级_3-点击切换地区_第三次"
+        ]
+    },
+    "日常-约会-角色优先级_3-点击切换地区_第三次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第三次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_3",
+            "日常-约会-角色优先级_3-点击切换地区_第四次"
+        ]
+    },
+    "日常-约会-角色优先级_3-点击切换地区_第四次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第四次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_3",
+            "日常-约会-角色优先级_3-点击切换地区_第五次"
+        ]
+    },
+    "日常-约会-角色优先级_3-点击切换地区_第五次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第五次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_3",
+            "日常-约会-角色优先级_3-五次都未找到对应角色"
+        ]
+    },
+    "日常-约会-角色优先级_3-五次都未找到对应角色": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试五次都未找到对应角色,将进行下一优先级的寻找"
+        },
+        "next": [
+            "日常-约会-已进入城内"
         ]
     },
     "日常-约会-角色优先级_3": {
@@ -314,7 +863,190 @@
         "max_hit": 1,
         "next": [
             "日常-约会-角色优先级_4",
-            "[JumpBack]日常-约会-点击切换地区"
+            "日常-约会-角色优先级_4-点击切换地区_第一次"
+        ]
+    },
+    "日常-约会-角色优先级_4-点击切换地区_第一次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第一次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_4",
+            "日常-约会-角色优先级_4-点击切换地区_第二次"
+        ]
+    },
+    "日常-约会-角色优先级_4-点击切换地区_第二次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第二次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_4",
+            "日常-约会-角色优先级_4-点击切换地区_第三次"
+        ]
+    },
+    "日常-约会-角色优先级_4-点击切换地区_第三次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第三次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_4",
+            "日常-约会-角色优先级_4-点击切换地区_第四次"
+        ]
+    },
+    "日常-约会-角色优先级_4-点击切换地区_第四次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第四次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_4",
+            "日常-约会-角色优先级_4-点击切换地区_第五次"
+        ]
+    },
+    "日常-约会-角色优先级_4-点击切换地区_第五次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第五次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_4",
+            "日常-约会-角色优先级_4-五次都未找到对应角色"
+        ]
+    },
+    "日常-约会-角色优先级_4-五次都未找到对应角色": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试五次都未找到对应角色,将进行下一优先级的寻找"
+        },
+        "next": [
+            "日常-约会-已进入城内"
         ]
     },
     "日常-约会-角色优先级_4": {
@@ -417,7 +1149,190 @@
         "max_hit": 1,
         "next": [
             "日常-约会-角色优先级_5",
-            "[JumpBack]日常-约会-点击切换地区"
+            "日常-约会-角色优先级_5-点击切换地区_第一次"
+        ]
+    },
+    "日常-约会-角色优先级_5-点击切换地区_第一次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第一次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_5",
+            "日常-约会-角色优先级_5-点击切换地区_第二次"
+        ]
+    },
+    "日常-约会-角色优先级_5-点击切换地区_第二次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第二次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_5",
+            "日常-约会-角色优先级_5-点击切换地区_第三次"
+        ]
+    },
+    "日常-约会-角色优先级_5-点击切换地区_第三次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第三次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_5",
+            "日常-约会-角色优先级_5-点击切换地区_第四次"
+        ]
+    },
+    "日常-约会-角色优先级_5-点击切换地区_第四次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第四次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_5",
+            "日常-约会-角色优先级_5-点击切换地区_第五次"
+        ]
+    },
+    "日常-约会-角色优先级_5-点击切换地区_第五次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    189,
+                    60,
+                    86,
+                    83
+                ],
+                "template": [
+                    "日常/共度时光/已进入城内.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "第五次切换地区尝试"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1188,
+                    341,
+                    76,
+                    36
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "日常-约会-角色优先级_5",
+            "日常-约会-角色优先级_5-五次都未找到对应角色"
+        ]
+    },
+    "日常-约会-角色优先级_5-五次都未找到对应角色": {
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试五次都未找到对应角色,将进行下一优先级的寻找"
+        },
+        "next": [
+            "日常-约会-已进入城内"
         ]
     },
     "日常-约会-角色优先级_5": {
