@@ -142,6 +142,9 @@
                 "count": 5500
             }
         },
+        "focus": {
+            "Node.Recognition.Succeeded": "✉️邮箱内无可领取奖励~"
+        },
         "action": {
             "type": "Click",
             "param": {
