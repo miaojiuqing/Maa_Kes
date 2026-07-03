@@ -21,6 +21,64 @@
             "1位置测试"
         ]
     },
+    "AB": {
+        "next": [
+            "任务B",
+            "任务A"
+        ]
+    },
+    "任务A": {
+        "anchor": {
+            "收尾": "任务A收尾"
+        },
+        "next": [
+            "执行"
+        ]
+    },
+    "任务A收尾": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    204,
+                    4,
+                    650,
+                    110
+                ],
+                "expected": "系统公告"
+            }
+        },
+        "action": "Click"
+    },
+    //假设节点A有ancher:{ "收尾": "任务A收尾"}，节点A执行成功的时候，令“收尾”="任务A收尾"
+    "任务B": {
+        "anchor": {
+            "收尾": "任务B收尾"
+        },
+        "next": [
+            "执行"
+        ]
+    },
+    "任务B收尾": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    204,
+                    4,
+                    650,
+                    110
+                ],
+                "expected": "资讯速递"
+            }
+        },
+        "action": "Click"
+    },
+    "执行": {
+        "next": [
+            "[Anchor]收尾"
+        ]
+    },
     "1位置测试": {
         "focus": {
             "Node.Recognition.Succeeded": ""

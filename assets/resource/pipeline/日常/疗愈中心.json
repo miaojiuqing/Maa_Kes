@@ -372,18 +372,28 @@
         ]
     },
     "疗愈中心-咨询-抉择": {
+        //左右弹出两个回答的时候
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "ColorMatch",
             "param": {
                 "roi": [
-                    584,
-                    614,
-                    100,
-                    75
+                    96,
+                    168,
+                    1184,
+                    418
                 ],
-                "template": [
-                    "日常/疗愈中心/治疗方案/治疗方式.png"
-                ]
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "lower": [
+                    243,
+                    245,
+                    246
+                ],
+                "connected": true,
+                "count": 45000
             }
         },
         "action": {
@@ -446,26 +456,17 @@
     },
     "疗愈中心-回答": {
         "recognition": {
-            "type": "ColorMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    224,
-                    180,
-                    912,
-                    236
+                    1159,
+                    589,
+                    76,
+                    76
                 ],
-                "upper": [
-                    15,
-                    16,
-                    14
-                ],
-                "lower": [
-                    0,
-                    0,
-                    0
-                ],
-                "connected": true,
-                "count": 20000
+                "template": [
+                    "单线程工具/自动推图/谁在说话.png"
+                ]
             }
         },
         "action": "Click"
