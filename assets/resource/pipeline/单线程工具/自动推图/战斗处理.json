@@ -123,18 +123,18 @@
     },
     "工具-自动推图-已进入战斗": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "green_mask": true,
-                "roi": [
-                    1034,
-                    544,
-                    246,
-                    176
-                ],
-                "template": [
-                    "战斗/可发动卡牌.png",
-                    "战斗/敌方行动中.png"
+                "threshold": 0.8,
+                "model": "battle.onnx",
+                "expected": [
+                    0, //怪物_0
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
                 ]
             }
         },

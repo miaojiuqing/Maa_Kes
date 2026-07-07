@@ -171,16 +171,18 @@
     },
     "清体力-主战员-已进入战斗": { //等待结束
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "NeuralNetworkDetect",
             "param": {
-                "roi": [
-                    981,
-                    0,
-                    84,
-                    83
-                ],
-                "template": [
-                    "日常/清体力/战斗中.png"
+                "threshold": 0.8,
+                "model": "battle.onnx",
+                "expected": [
+                    0, //怪物_0
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
                 ]
             }
         },
