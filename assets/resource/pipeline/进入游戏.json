@@ -86,6 +86,7 @@
         }
     },
     "进游戏-任务开始层": {
+        "action": "DoNothing",
         "next": [
             "[JumpBack]进游戏-点击领取签到奖励",
             "[JumpBack]通用-点击屏幕",

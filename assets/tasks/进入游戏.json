@@ -25,24 +25,44 @@
             "controller": [
                 "安卓端"
             ],
-            "description": "目前仅支持国服,其他渠道需提供包名",
+            "description": "目模拟器通过包名启动,PC端暂无方法直接启动游戏",
             "default_case": "No",
             "cases": [
                 {
                     "name": "Yes",
-                    "pipeline_override": {
-                        "进游戏-任务开始层": {
-                            "action": "StartApp",
-                            "package": "com.tencent.czn"
-                        }
-                    },
-                    "option": []
+                    "option": [
+                        "模拟器包名启动"
+                    ]
                 },
                 {
                     "name": "No",
                     "pipeline_override": {
                         "进游戏-任务开始层": {
                             "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟器包名启动": {
+            "label": "渠道选择",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "国服",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "StartApp",
+                            "package": "com.tencent.czn"
+                        }
+                    }
+                },
+                {
+                    "name": "国际服",
+                    "pipeline_override": {
+                        "进游戏-任务开始层": {
+                            "action": "StartApp",
+                            "package": "com.smilegate.chaoszero.stove.google"
                         }
                     }
                 }

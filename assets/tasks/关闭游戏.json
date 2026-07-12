@@ -1,0 +1,52 @@
+{
+    "task": [
+        {
+            "name": "关闭游戏",
+            "label": "🎮关闭游戏",
+            "default_check": true,
+            "group": [
+                "日常"
+            ],
+            "entry": "关游戏",
+            "description": "暂不支持国服和国际服之外的模拟器游戏自启动,若有需要麻烦提供包名\n\nPC端使用请用管理员模式启动不然连接不上窗口\n\n分辨率一定要是16：9",
+            "pipeline_override": {
+                "关游戏": {
+                    "enabled": true
+                }
+            },
+            "option": [
+                "模拟器自启动游戏"
+            ]
+        }
+    ],
+    "option": {
+        "模拟器包名关游戏": {
+            "type": "switch",
+            "controller": [
+                "安卓端"
+            ],
+            "description": "目前仅支持国服和国际服",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "关游戏": {
+                            "action": "StopApp",
+                            "package": "com.tencent.czn"
+                        }
+                    },
+                    "option": []
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "关游戏": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

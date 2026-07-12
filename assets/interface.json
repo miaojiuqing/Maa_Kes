@@ -81,7 +81,9 @@
         "tasks/工具/读消息.json",
         "tasks/工具/教学红点清除.json",
         "tasks/工具/交互辅助.json",
-        "tasks/工具/自动战斗.json"
+        "tasks/工具/自动战斗.json",
+        //关闭
+        "tasks/关闭游戏.json",
     ],
     "option": {
         "没做完别看了": {
