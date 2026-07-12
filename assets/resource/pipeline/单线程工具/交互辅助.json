@@ -2,6 +2,7 @@
     "工具-交互辅助-任务开始层": {
         "next": [
             "[JumpBack]工具-交互辅助-点击继续挑战",
+            "[JumpBack]工具-交互辅助-点击紫底白圈",
             "[JumpBack]空任务"
         ]
     },
@@ -18,6 +19,18 @@
                 ],
                 "template": [
                     "单线程工具/自动推图/再战.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "工具-交互辅助-点击紫底白圈": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "通用/交互按钮/紫底白圆.png"
                 ]
             }
         },

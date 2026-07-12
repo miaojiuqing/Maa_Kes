@@ -9,7 +9,8 @@
             "entry": "工具-交互辅助-任务开始层",
             "description": "自行监测并点击所所选按键",
             "option": [
-                "工具-交互辅助-继续挑战"
+                "工具-交互辅助-继续挑战",
+                "工具-交互辅助-紫底白圈"
             ]
         }
     ],
@@ -32,6 +33,30 @@
                     "name": "No",
                     "pipeline_override": {
                         "工具-交互辅助-点击继续挑战": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "工具-交互辅助-紫底白圈": {
+            "label": "紫底白圈",
+            "type": "switch",
+            "icon": "./resource/image/通用/交互按钮/紫底白圆.png",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "工具-交互辅助-点击紫底白圈": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "工具-交互辅助-点击紫底白圈": {
                             "enabled": false
                         }
                     }
