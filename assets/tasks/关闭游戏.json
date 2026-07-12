@@ -7,46 +7,71 @@
             "group": [
                 "日常"
             ],
-            "entry": "关游戏",
-            "description": "暂不支持国服和国际服之外的模拟器游戏自启动,若有需要麻烦提供包名\n\nPC端使用请用管理员模式启动不然连接不上窗口\n\n分辨率一定要是16：9",
+            "entry": "关游戏-任务开始层",
+            "description": "暂不支持国服和国际服之外的模拟器游戏自关闭,若有需要麻烦提供包名\n\nPC端使用请用管理员模式关闭不然连接不上窗口\n\n分辨率一定要是16：9",
             "pipeline_override": {
-                "关游戏": {
+                "关游戏-任务开始层": {
                     "enabled": true
                 }
             },
             "option": [
-                // "模拟器自启动游戏"
+                "模拟器直接关游戏"
             ]
         }
     ],
     "option": {
-        // "模拟器包名关游戏": {
-        //     "type": "switch",
-        //     "controller": [
-        //         "安卓端"
-        //     ],
-        //     "description": "目前仅支持国服和国际服",
-        //     "default_case": "No",
-        //     "cases": [
-        //         {
-        //             "name": "Yes",
-        //             "pipeline_override": {
-        //                 "关游戏": {
-        //                     "action": "StopApp",
-        //                     "package": "com.tencent.czn"
-        //                 }
-        //             },
-        //             "option": []
-        //         },
-        //         {
-        //             "name": "No",
-        //             "pipeline_override": {
-        //                 "关游戏": {
-        //                     "action": "DoNothing"
-        //                 }
-        //             }
-        //         }
-        //     ]
-        // }
+        "模拟器直接关游戏": {
+            "type": "switch",
+            "controller": [
+                "安卓端"
+            ],
+            "description": "目模拟器通过包名关闭,PC端暂无方法直接关闭游戏",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "option": [
+                        "模拟器包名关闭"
+                    ]
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "关游戏-任务开始层": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟器包名关闭": {
+            "label": "渠道选择",
+            "type": "select",
+            "controller": [
+                "安卓端"
+            ],
+            "cases": [
+                {
+                    "name": "国服",
+                    "pipeline_override": {
+                        "关游戏-任务开始层": {
+                            "action": "StopApp",
+                            "package": "com.tencent.czn",
+                            "next": []
+                        }
+                    }
+                },
+                {
+                    "name": "国际服",
+                    "pipeline_override": {
+                        "关游戏-任务开始层": {
+                            "action": "StopApp",
+                            "package": "com.smilegate.chaoszero.stove.google",
+                            "next": []
+                        }
+                    }
+                }
+            ]
+        }
     }
 }

@@ -50,9 +50,6 @@
             "controller": [
                 "安卓端"
             ],
-            "resource": [
-                "简中"
-            ],
             "cases": [
                 {
                     "name": "国服",

@@ -1,3 +1,71 @@
 {
-    "关游戏": {}
+    "关游戏-任务开始层": {
+        "action": "DoNothing",
+        "next": [
+            "关游戏-已进入菜单",
+            "[JumpBack]菜单点击-唤出菜单",
+            "[JumpBack]进游戏-任务开始层"
+        ]
+    },
+    "关游戏-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    124,
+                    101,
+                    182
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "关游戏-已进入菜单",
+            "[JumpBack]菜单点击-唤出菜单"
+        ]
+    },
+    "关游戏-已进入菜单": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1185,
+                    615,
+                    93,
+                    104
+                ],
+                "template": [
+                    "进入游戏/关游戏/点击关闭.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "pre_delay": 1000,
+        "post_delay": 2000,
+        "next": [
+            "关游戏-关闭确认",
+            "关游戏-已进入菜单"
+        ]
+    },
+    "关游戏-关闭确认": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    610,
+                    359,
+                    148,
+                    179
+                ],
+                "template": [
+                    "肉鸽类/通用/通用按钮/橙色白圆心.png"
+                ]
+            }
+        },
+        "pre_delay": 1000,
+        "action": "Click"
+    }
 }
