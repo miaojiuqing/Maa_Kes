@@ -1,0 +1,66 @@
+{
+    "录屏辅助-点击重来": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "重来"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 5000
+    },
+    "活动-打歌-总任务层": {
+        // "repeat_delay": 0,
+        // "post_delay": 0,
+        // "pre_delay": 0,
+        "next": [
+            "[JumpBack]录屏辅助-点击重来",
+            // "[JumpBack]活动-打歌-左侧_单次点击",
+            "[JumpBack]空任务"
+        ]
+    },
+    "活动-打歌-右侧_单次点击": {
+        "repeat_delay": 0,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    513,
+                    167,
+                    106,
+                    414
+                ],
+                "template": [
+                    "活动/至高处的旋律/短按/蓝色符.png",
+                    "活动/至高处的旋律/短按/红色符.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "活动-打歌-左侧_单次点击": {
+        "repeat_delay": 0,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    649,
+                    172,
+                    106,
+                    369
+                ],
+                "template": [
+                    "活动/至高处的旋律/短按/蓝色符.png",
+                    "活动/至高处的旋律/短按/红色符.png"
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}
