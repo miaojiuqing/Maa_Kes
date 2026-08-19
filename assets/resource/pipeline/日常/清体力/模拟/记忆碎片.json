@@ -54,10 +54,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    1015,
-                    50,
-                    260,
-                    670
+                    1022,
+                    63,
+                    258,
+                    657
                 ],
                 "order_by": "Score",
                 "green_mask": true,
@@ -72,7 +72,7 @@
                 "target_offset": [
                     -200,
                     1,
-                    130,
+                    75,
                     20
                 ]
             }
@@ -95,7 +95,7 @@
                 ],
                 "green_mask": true,
                 "template": [
-                    "日常/清体力/记忆碎片/遗骸与工具.png"
+                    "日常/清体力/记忆碎片/地位与行踪.png"
                 ]
             }
         },

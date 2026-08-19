@@ -4,13 +4,18 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    742,
-                    494,
-                    77,
-                    77
+                    1022,
+                    63,
+                    258,
+                    657
                 ],
+                "threshold": [
+                    0.8
+                ],
+                "green_mask": true,
                 "template": [
-                    "肉鸽类/通用/道中选路/存档点/点击获取装备.png"
+                    // "日常/清体力/记忆碎片/地位与行踪.png",
+                    "日常/清体力/记忆碎片/焰与宝珠.png"
                 ]
             }
         },
@@ -20,6 +25,24 @@
         "next": [
             "1位置测试"
         ]
+    },
+    "1位置测试": {
+        "focus": {
+            "Node.Recognition.Succeeded": ""
+        },
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": "1识别测试",
+                "roi_offset": [
+                    -200,
+                    1,
+                    75,
+                    20
+                ],
+                "expected": []
+            }
+        }
     },
     "AB": {
         "next": [
@@ -92,24 +115,6 @@
         "next": [
             "[Anchor]收尾"
         ]
-    },
-    "1位置测试": {
-        "focus": {
-            "Node.Recognition.Succeeded": ""
-        },
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": "1识别测试",
-                "roi_offset": [
-                    -250,
-                    50,
-                    200,
-                    50
-                ],
-                "expected": []
-            }
-        }
     },
     "1测": { //启动手动战斗模式
         "recognition": {
