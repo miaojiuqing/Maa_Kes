@@ -48,6 +48,17 @@
                 ]
             }
         },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    445,
+                    229,
+                    336,
+                    155
+                ]
+            }
+        },
         // "recognition": {
         //     "type": "TemplateMatch",
         //     "param": {
