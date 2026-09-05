@@ -13,7 +13,8 @@
                     "next": [
                         "日常-约会-总任务层",
                         "[JumpBack]通用-回首页",
-                        "[JumpBack]黑屏计数"
+                        "[JumpBack]黑屏计数",
+                        "[JumpBack]进游戏-息屏点击"
                     ]
                 }
             },
