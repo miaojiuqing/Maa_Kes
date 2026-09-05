@@ -58,7 +58,7 @@
                     155
                 ]
             }
-        },
+        }
         // "recognition": {
         //     "type": "TemplateMatch",
         //     "param": {
@@ -84,17 +84,6 @@
         //         ]
         //     }
         // },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    355,
-                    215,
-                    556,
-                    309
-                ]
-            }
-        }
     },
     "进游戏-任务开始层": {
         "action": "DoNothing",
