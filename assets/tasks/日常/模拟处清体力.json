@@ -157,7 +157,7 @@
             "cases": [
                 {
                     "name": "清体力-成长",
-                    "label": "成长",
+                    "label": "成长(基础养成材料)",
                     "pipeline_override": {
                         "清体力-刷取类型接口": {
                             "next": [
@@ -171,7 +171,7 @@
                 },
                 {
                     "name": "清体力-主战员",
-                    "label": "主战员",
+                    "label": "主战员(主战员晋升材料)",
                     "pipeline_override": {
                         "清体力-刷取类型接口": {
                             "next": [
@@ -185,7 +185,7 @@
                 },
                 {
                     "name": "清体力-辅战员",
-                    "label": "辅战员",
+                    "label": "辅战员(辅战员晋升材料)",
                     "pipeline_override": {
                         "清体力-刷取类型接口": {
                             "next": [
@@ -199,7 +199,7 @@
                 },
                 {
                     "name": "清体力-潜能",
-                    "label": "潜能",
+                    "label": "潜能(主战员技能升级材料)",
                     "pipeline_override": {
                         "清体力-刷取类型接口": {
                             "next": [
@@ -213,7 +213,7 @@
                 },
                 {
                     "name": "清体力-记忆碎片",
-                    "label": "记忆碎片",
+                    "label": "记忆碎片(圣遗物(bushi))",
                     "description": "暂时无法设定挑战次数,待重构",
                     "pipeline_override": {
                         "清体力-刷取类型接口": {
