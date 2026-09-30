@@ -234,7 +234,7 @@
                 ]
             }
         },
-        "post_delay": 1000,
+        "post_delay": 2500,
         "next": [
             "[JumpBack]日常-约会-跳过确认",
             "[JumpBack]日常-约会-可共度时光-跳过当前对话",
