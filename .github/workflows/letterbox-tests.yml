@@ -1,0 +1,30 @@
+name: Letterbox custom task
+on:
+  push:
+    paths:
+      - assets/resource/custom/**
+      - assets/resource/pipeline/黑边适配.json
+      - assets/tasks/黑边适配.json
+      - assets/interface.json
+      - tests/Letterbox.Tests/**
+      - .github/workflows/letterbox-tests.yml
+  pull_request:
+    paths:
+      - assets/resource/custom/**
+      - assets/resource/pipeline/黑边适配.json
+      - assets/tasks/黑边适配.json
+      - assets/interface.json
+      - tests/Letterbox.Tests/**
+      - .github/workflows/letterbox-tests.yml
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        runtime: ['5.12.3', '5.14.2']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test tests/Letterbox.Tests/Letterbox.Tests.csproj -c Release -p:MaaRuntimeVersion=${{ matrix.runtime }}

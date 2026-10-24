@@ -1,0 +1,12 @@
+{
+    "黑边适配": {
+        "action": "Custom",
+        "custom_action": "MaaKesLetterbox",
+        "custom_action_param": {"enabled": true},
+        "timeout": 3000,
+        "focus": {
+            "Node.Action.Succeeded": "已启用黑边适配",
+            "Node.Action.Failed": "黑边适配失败：请确认桌面端已连接、画面居中且上下为黑边；恢复画面或重启工具后重试"
+        }
+    }
+}

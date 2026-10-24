@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <MaaFrameworkPlatform>win-x64</MaaFrameworkPlatform>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <MaaRuntimeVersion Condition="'$(MaaRuntimeVersion)' == ''">5.12.3</MaaRuntimeVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit.v3" Version="3.0.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.1" />
+    <PackageReference Include="Maa.Framework" Version="5.10.0" />
+    <PackageReference Include="Maa.Framework.Runtimes" Version="$(MaaRuntimeVersion)" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+    <Compile Include="../../assets/resource/custom/MaaKesLetterbox.cs" Link="MaaKesLetterbox.cs" />
+    <None Include="../../assets/resource/custom/MaaKesLetterbox.cs" Link="CustomSource.cs.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../assets/interface.json" Link="shipped/interface.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../assets/tasks/黑边适配.json" Link="shipped/tasks/黑边适配.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../assets/resource/pipeline/黑边适配.json" Link="shipped/resource/pipeline/黑边适配.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
