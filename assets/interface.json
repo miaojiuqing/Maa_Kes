@@ -1,7 +1,7 @@
 {
     "interface_version": 2,
     "name": "Maa_Kes",
-    "description": "模拟器需设置16:9分辨率,PC端需游戏窗口设置为16:9且以管理员方式启动该软件,手机端设置参考maa安卓版",
+    "description": "模拟器需设置16:9分辨率；PC端以管理员方式运行，游戏画面使用16:9，有上下黑边的屏幕（如16:10）可将黑边适配任务放在队列最前；手机端设置参考maa安卓版",
     "contact": "QQ群: 437587416",
     "license": "MIT",
     "welcome": "维若妮卡已就位！",
@@ -63,6 +63,7 @@
         }
     ],
     "import": [
+        "tasks/黑边适配.json",
         "tasks/进入游戏.json",
         //日常 
         "tasks/日常/喝咖啡.json",
