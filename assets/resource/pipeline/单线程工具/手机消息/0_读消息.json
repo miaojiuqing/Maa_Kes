@@ -78,6 +78,20 @@
             "工具-读消息-未发现任何可读消息"
         ]
     },
+    "工具-读消息-管理层": {
+        "focus": {
+            "Node.Recognition.Succeeded": "开始检测当前是否存在重要消息"
+        },
+        "next": [
+            "工具-读消息-联系人列表-有未读消息",
+            "[JumpBack]工具-读消息-缓冲层",
+            "工具-读消息-未发现任何可读消息"
+        ]
+    },
+    "工具-读消息-缓冲层": {
+        "max_hit": 10,
+        "post_delay": 500
+    },
     "工具-读消息-未发现任何可读消息": {
         "inverse": true,
         "recognition": {
@@ -142,6 +156,27 @@
         }
     },
     //好友列表
+    "工具-读消息-联系人列表-有未读消息": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    517,
+                    599,
+                    53,
+                    51
+                ],
+                "template": [
+                    "单线程工具/手机消息/下面的未读.png",
+                    "单线程工具/手机消息/下面的未读_汉.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "发现联系人列表有未读消息"
+        },
+        "next": []
+    },
     "工具-读消息-发现好友列表有未读消息": {
         "recognition": {
             "type": "TemplateMatch",
