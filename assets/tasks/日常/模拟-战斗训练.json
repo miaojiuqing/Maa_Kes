@@ -2,14 +2,14 @@
     "task": [
         {
             "name": "日常-模拟-战斗训练",
-            "label": "模拟-战斗训练",
+            "label": "~~模拟-战斗训练~~",
             "icon": "./resource/image/图标/任务图标/模拟.png",
             "default_check": true,
             "group": [
                 "日常"
             ],
             "entry": "日常-模拟-战斗训练-任务开始层",
-            "description": "",
+            "description": "用不了，没写完",
             "option": [
                 "日常-模拟-刷取大类型分类"
             ]
