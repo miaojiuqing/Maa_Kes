@@ -22,10 +22,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    929,
+                    767,
                     0,
-                    351,
-                    217
+                    513,
+                    214
                 ],
                 "template": [
                     "通用/交互按钮/叉叉.png",
