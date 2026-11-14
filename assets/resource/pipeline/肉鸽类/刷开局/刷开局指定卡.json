@@ -33,10 +33,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    841,
+                    783,
                     0,
-                    164,
-                    89
+                    232,
+                    90
                 ],
                 "threshold": 0.85,
                 "template": [
