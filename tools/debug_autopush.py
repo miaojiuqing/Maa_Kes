@@ -126,7 +126,7 @@ def main():
         run(tasker, args.entry, int(args.arg or 1800))
     elif args.cmd == "shot":
         ctrl.post_screencap().wait()
-        p = OUT / f"{args.arg or 'shot'}.png"
+        p = OUT / f"{Path(args.arg or 'shot').name}.png"  # 只取文件名，始终写在 debug_out/ 内
         cv2.imwrite(str(p), ctrl.cached_image)
         print(p)
 
