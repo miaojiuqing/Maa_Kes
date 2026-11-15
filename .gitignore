@@ -460,3 +460,7 @@ build-android
 
 config
 debug
+# 本地调试产物（截图、分析脚本）
+.tmp_diag/
+MFA/
+install/
