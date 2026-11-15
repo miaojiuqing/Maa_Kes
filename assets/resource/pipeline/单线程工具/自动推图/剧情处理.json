@@ -3,12 +3,15 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                // 与 工具-剧情跳过-点击跳过按钮 保持一致：图标在 x962~1002，原 976 会切掉左侧；
+                // 模板是 green_mask 版（半透明图标叠在剧情画面上，背景不可靠）
                 "roi": [
-                    976,
+                    950,
                     0,
-                    92,
+                    120,
                     88
                 ],
+                "green_mask": true,
                 "template": [
                     "单线程工具/剧情跳过/跳过按钮.png"
                 ]
@@ -64,11 +67,12 @@
                             "type": "TemplateMatch",
                             "param": {
                                 "roi": [
-                                    976,
+                                    950,
                                     0,
-                                    92,
+                                    120,
                                     88
                                 ],
+                                "green_mask": true,
                                 "template": [
                                     "单线程工具/剧情跳过/跳过按钮.png"
                                 ]
